@@ -12,6 +12,7 @@ import { MarriageIntentionsSection } from './components/MarriageIntentionsSectio
 import { PhotoGallerySection } from './components/PhotoGallerySection';
 import { ContactSection } from './components/ContactSection';
 import { PrivacyFooter } from './components/PrivacyFooter';
+import defaultPermanentPhotos from './data/permanentPhotos.json';
 
 export default function App() {
   // Bengali is the default language as requested
@@ -20,10 +21,26 @@ export default function App() {
   const [images, setImages] = useState<GalleryImage[]>(() => {
     try {
       const saved = localStorage.getItem('marriage_portfolio_images') || sessionStorage.getItem('marriage_portfolio_images');
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed;
+        }
+      }
+    } catch {}
+
+    // Static bundled permanent photos for Netlify / Vercel JAMstack deployments
+    if (Array.isArray(defaultPermanentPhotos) && defaultPermanentPhotos.length > 0) {
+      return defaultPermanentPhotos.map((p: any, idx: number) => ({
+        id: p.id || `perm_${idx + 1}`,
+        dataUrl: p.url,
+        name: p.name || `Photo ${idx + 1}`,
+        size: 1024,
+        addedAt: Date.now(),
+      }));
     }
+
+    return [];
   });
 
   // Load permanent photos from server, or auto-sync existing local photos to server

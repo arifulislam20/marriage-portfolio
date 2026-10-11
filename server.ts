@@ -42,18 +42,26 @@ async function startServer() {
       const savedList: Array<{ id: string; url: string; name: string }> = [];
 
       images.forEach((img, idx) => {
-        const matches = img.dataUrl.match(/^data:image\/(\w+);base64,(.+)$/);
-        const ext = matches ? (matches[1] === 'jpeg' ? 'jpg' : matches[1]) : 'jpg';
-        const base64Data = matches ? matches[2] : img.dataUrl.replace(/^data:image\/\w+;base64,/, '');
-        const filename = `permanent_photo_${idx + 1}.${ext}`;
-        const filepath = path.join(publicPhotosDir, filename);
+        if (img.dataUrl && img.dataUrl.startsWith('data:image/')) {
+          const matches = img.dataUrl.match(/^data:image\/(\w+);base64,(.+)$/);
+          const ext = matches ? (matches[1] === 'jpeg' ? 'jpg' : matches[1]) : 'jpg';
+          const base64Data = matches ? matches[2] : img.dataUrl.replace(/^data:image\/\w+;base64,/, '');
+          const filename = `permanent_photo_${idx + 1}.${ext}`;
+          const filepath = path.join(publicPhotosDir, filename);
 
-        fs.writeFileSync(filepath, Buffer.from(base64Data, 'base64'));
-        savedList.push({
-          id: `perm_${idx + 1}`,
-          url: `/photos/${filename}`,
-          name: img.name || `Photo ${idx + 1}`,
-        });
+          fs.writeFileSync(filepath, Buffer.from(base64Data, 'base64'));
+          savedList.push({
+            id: `perm_${idx + 1}`,
+            url: `/photos/${filename}`,
+            name: img.name || `Photo ${idx + 1}`,
+          });
+        } else if (img.dataUrl && img.dataUrl.startsWith('/photos/')) {
+          savedList.push({
+            id: img.id || `perm_${idx + 1}`,
+            url: img.dataUrl,
+            name: img.name || `Photo ${idx + 1}`,
+          });
+        }
       });
 
       // Write to src/data/permanentPhotos.json so it's committed to the app
