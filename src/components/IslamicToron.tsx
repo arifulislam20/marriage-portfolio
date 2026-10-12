@@ -35,18 +35,18 @@ export const IslamicToron: React.FC<IslamicToronProps> = ({ className = '' }) =>
 
           {/* Soft inner glow gradient */}
           <radialGradient id="innerGlow" cx="50%" cy="100%" r="60%">
-            <stop offset="0%" stopColor="#25A078" stopOpacity="0.25" />
-            <stop offset="60%" stopColor="#125B43" stopOpacity="0.08" />
-            <stop offset="100%" stopColor="#0E294B" stopOpacity="0" />
+            <stop offset="0%" stopColor="#C89B3C" stopOpacity="0.25" />
+            <stop offset="60%" stopColor="#651C2C" stopOpacity="0.08" />
+            <stop offset="100%" stopColor="#4A1420" stopOpacity="0" />
           </radialGradient>
 
           {/* Horizontal accent line fade */}
           <linearGradient id="fadeLine" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#125B43" stopOpacity="0" />
-            <stop offset="20%" stopColor="#125B43" stopOpacity="0.6" />
-            <stop offset="50%" stopColor="#D4AF37" stopOpacity="0.9" />
-            <stop offset="80%" stopColor="#125B43" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#125B43" stopOpacity="0" />
+            <stop offset="0%" stopColor="#651C2C" stopOpacity="0" />
+            <stop offset="20%" stopColor="#651C2C" stopOpacity="0.6" />
+            <stop offset="50%" stopColor="#C89B3C" stopOpacity="0.9" />
+            <stop offset="80%" stopColor="#651C2C" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#651C2C" stopOpacity="0" />
           </linearGradient>
         </defs>
 

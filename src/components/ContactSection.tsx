@@ -12,14 +12,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
   const cleanPhone = profile.fatherPhone.replace(/[^0-9]/g, '');
 
   return (
-    <section id="contact" className="py-12 border-t border-[#0E294B]/15 bg-white">
+    <section id="contact" className="py-12 border-t border-[#4A1420]/15 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="mb-8">
-          <div className={`text-xs uppercase tracking-widest text-[#0E294B] ${isBn ? 'font-bengali' : 'font-cinzel'} mb-1 font-bold`}>
+          <div className={`text-xs uppercase tracking-widest text-[#4A1420] ${isBn ? 'font-bengali' : 'font-cinzel'} mb-1 font-bold`}>
             {isBn ? 'যোগাযোগ' : 'Contact Information'}
           </div>
-          <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E294B] ${isBn ? 'font-bengali' : 'font-display'}`}>
+          <h2 className={`text-2xl sm:text-3xl font-bold text-[#4A1420] ${isBn ? 'font-bengali' : 'font-display'}`}>
             {isBn ? 'অভিভাবকের মাধ্যমে যোগাযোগ ও আনুষ্ঠানিক মাধ্যম' : 'Guardian Contact & Inquiries'}
           </h2>
         </div>
@@ -27,18 +27,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
         {/* Contact Arrangements Card */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Primary Preference: Guardian Contact */}
-          <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E294B]/20 shadow-xs flex flex-col justify-between">
+          <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#4A1420]/20 shadow-xs flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E294B] mb-3">
-                <ShieldCheck className="w-4 h-4 text-[#0E294B]" />
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#4A1420] mb-3">
+                <ShieldCheck className="w-4 h-4 text-[#4A1420]" />
                 <span>{isBn ? 'পছন্দনীয় যোগাযোগের মাধ্যম' : 'Preferred Arrangement'}</span>
               </div>
 
-              <h3 className={`text-lg sm:text-xl font-bold text-[#101D2B] mb-2 ${isBn ? 'font-bengali' : 'font-display'}`}>
+              <h3 className={`text-lg sm:text-xl font-bold text-[#220D12] mb-2 ${isBn ? 'font-bengali' : 'font-display'}`}>
                 {isBn ? 'অভিভাবকের মাধ্যমে যোগাযোগ কাম্য' : 'Contact Through Guardian Preferred'}
               </h3>
 
-              <p className="text-xs sm:text-sm text-[#3A4D63] leading-relaxed mb-6 font-medium">
+              <p className="text-xs sm:text-sm text-[#543940] leading-relaxed mb-6 font-medium">
                 {isBn
                   ? 'বিবাহের আলোচনা উভয় পরিবারের অভিভাবক ও মুরব্বিদের মাধ্যমে হওয়া সবচেয়ে বরকতময় ও শোভনীয়। যেকোনো প্রাথমিক অনুসন্ধানের জন্য সরাসরি সম্মানিত পিতার নম্বরে যোগাযোগ করার অনুরোধ করা হলো।'
                   : 'Islamic matrimony inquiries are most respectfully handled through respected family guardians. For initial introductions and discussions, please reach out directly to the father.'}
@@ -46,13 +46,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
             </div>
 
             {/* Direct Guardian Phone CTA - Light Green to White Gradient Box */}
-            <div className="p-4 rounded-xl bg-gradient-to-r from-[#D8E5F3] via-[#EEF8F3] to-white border border-[#0E294B]/25 text-[#101D2B] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+            <div className="p-4 rounded-xl bg-gradient-to-r from-[#FCE8ED] via-[#EEF8F3] to-white border border-[#4A1420]/25 text-[#220D12] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
               <div>
-                <div className="text-[11px] font-bold text-[#0E294B] uppercase tracking-wider mb-0.5 flex items-center gap-1.5">
-                  <UserCheck className="w-3.5 h-3.5 text-[#0E294B]" />
+                <div className="text-[11px] font-bold text-[#4A1420] uppercase tracking-wider mb-0.5 flex items-center gap-1.5">
+                  <UserCheck className="w-3.5 h-3.5 text-[#4A1420]" />
                   <span>{isBn ? 'পিতা: মোঃ সুলতান আহমেদ' : 'Father: Md. Sultan Ahmed'}</span>
                 </div>
-                <div className="text-base sm:text-lg font-bold text-[#0E294B] tabular-nums">
+                <div className="text-base sm:text-lg font-bold text-[#4A1420] tabular-nums">
                   <a
                     href={`tel:${cleanPhone}`}
                     className="hover:underline transition-colors"
@@ -64,7 +64,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
 
               <a
                 href={`tel:${cleanPhone}`}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#D3E2F2] to-white border border-[#0E294B]/30 text-[#0E294B] text-xs font-bold hover:border-[#0E294B] hover:from-[#C5DAF0] hover:to-white transition-all whitespace-nowrap shadow-xs no-print"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#FCE8ED] to-white border border-[#4A1420]/30 text-[#4A1420] text-xs font-bold hover:border-[#4A1420] hover:from-[#FADDE4] hover:to-white transition-all whitespace-nowrap shadow-xs no-print"
               >
                 <Phone className="w-3.5 h-3.5" />
                 <span>{isBn ? 'অভিভাবককে কল করুন' : 'Call Guardian'}</span>
@@ -73,18 +73,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
           </div>
 
           {/* Public Email Option */}
-          <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E294B]/20 shadow-xs flex flex-col justify-between">
+          <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#4A1420]/20 shadow-xs flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E294B] mb-3">
-                <Mail className="w-4 h-4 text-[#0E294B]" />
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#4A1420] mb-3">
+                <Mail className="w-4 h-4 text-[#4A1420]" />
                 <span>{isBn ? 'ইমেইল যোগাযোগ' : 'Formal Email Communication'}</span>
               </div>
 
-              <h3 className={`text-lg sm:text-xl font-bold text-[#101D2B] mb-2 ${isBn ? 'font-bengali' : 'font-display'}`}>
+              <h3 className={`text-lg sm:text-xl font-bold text-[#220D12] mb-2 ${isBn ? 'font-bengali' : 'font-display'}`}>
                 {isBn ? 'লিখিত প্রস্তাব ও বার্তা' : 'Written Inquiries'}
               </h3>
 
-              <p className="text-xs sm:text-sm text-[#3A4D63] leading-relaxed mb-6 font-medium">
+              <p className="text-xs sm:text-sm text-[#543940] leading-relaxed mb-6 font-medium">
                 {isBn
                   ? 'প্রাথমিক পরিচয়পত্র আদান-প্রদান বা বিস্তারিত পারিবারিক জীবনবৃত্তান্ত প্রেরণের জন্য পাবলিক ইমেইল ব্যবহার করতে পারেন।'
                   : 'For exchanging formal family biodata documents or preliminary written introductions, email communication may be utilized.'}
@@ -93,14 +93,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
 
             <div>
               {/* Mailto link rendered exactly as supplied */}
-              <div className="p-4 rounded-xl bg-[#F0F4F9] border border-[#0E294B]/15 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+              <div className="p-4 rounded-xl bg-[#FAF0F2] border border-[#4A1420]/15 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
                 <div className="overflow-hidden">
-                  <div className="text-[11px] font-bold text-[#0E294B] uppercase tracking-wider mb-0.5">
+                  <div className="text-[11px] font-bold text-[#4A1420] uppercase tracking-wider mb-0.5">
                     {isBn ? 'পাবলিক ইমেইল' : 'Public Email'}
                   </div>
                   <a
                     href={`mailto:${profile.publicEmail}`}
-                    className="text-sm sm:text-base font-bold text-[#0E294B] hover:underline underline-offset-4 transition-colors break-all"
+                    className="text-sm sm:text-base font-bold text-[#4A1420] hover:underline underline-offset-4 transition-colors break-all"
                   >
                     {profile.publicEmail}
                   </a>
@@ -108,7 +108,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
 
                 <a
                   href={`mailto:${profile.publicEmail}`}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#D3E2F2] to-white border border-[#0E294B]/30 text-[#0E294B] text-xs font-bold hover:border-[#0E294B] hover:from-[#C5DAF0] hover:to-white transition-all whitespace-nowrap shadow-xs no-print"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#FCE8ED] to-white border border-[#4A1420]/30 text-[#4A1420] text-xs font-bold hover:border-[#4A1420] hover:from-[#FADDE4] hover:to-white transition-all whitespace-nowrap shadow-xs no-print"
                 >
                   <Mail className="w-3.5 h-3.5" />
                   <span>{isBn ? 'ইমেইল পাঠান' : 'Send Email'}</span>
@@ -116,8 +116,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
               </div>
 
               {/* Courteous communication note */}
-              <div className="flex items-start gap-2 p-2.5 rounded-lg bg-[#FAFBF9] border border-[#0E294B]/15 text-[11px] text-[#3A4D63] no-print">
-                <AlertCircle className="w-3.5 h-3.5 text-[#0E294B] shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2 p-2.5 rounded-lg bg-[#FAF5F6] border border-[#4A1420]/15 text-[11px] text-[#543940] no-print">
+                <AlertCircle className="w-3.5 h-3.5 text-[#4A1420] shrink-0 mt-0.5" />
                 <span>
                   {isBn
                     ? 'অনুরোধ: যোগাযোগের ক্ষেত্রে শালীনতা রক্ষা ও প্রস্তাবের সাথে সংক্ষিপ্ত পারিবারিক পরিচিতি উল্লেখ করার অনুরোধ রইল।'

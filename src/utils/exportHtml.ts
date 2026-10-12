@@ -32,13 +32,13 @@ export function exportStandaloneHtml(
     :root {
       --bg-page: #FFFFFF;
       --bg-card: #FFFFFF;
-      --bg-sub: #F0F4F9;
-      --emerald: #0E294B;
-      --emerald-dark: #07192F;
-      --gold: #C5A059;
-      --gold-light: #E5CF98;
-      --text-main: #101D2B;
-      --text-muted: #3A4D63;
+      --bg-sub: #FAF0F2;
+      --emerald: #4A1420;
+      --emerald-dark: #340B13;
+      --gold: #C89B3C;
+      --gold-light: #E8CE96;
+      --text-main: #220D12;
+      --text-muted: #543940;
       --border-emerald: rgba(14, 67, 49, 0.18);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }

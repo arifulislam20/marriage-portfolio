@@ -15,19 +15,19 @@ export const PrivacyFooter: React.FC<PrivacyFooterProps> = ({ profile, lang }) =
   };
 
   return (
-    <footer className="pt-12 pb-16 border-t border-[#0E294B]/15 bg-[#F6FAF7] text-xs text-[#3A4D63]">
+    <footer className="pt-12 pb-16 border-t border-[#4A1420]/15 bg-[#FAF5F6] text-xs text-[#543940]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Matrimonial Privacy & Etiquette Notice Box */}
-        <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E294B]/20 shadow-xs mb-10">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E294B] mb-3">
-            <Shield className="w-4 h-4 text-[#0E294B]" />
+        <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#4A1420]/20 shadow-xs mb-10">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#4A1420] mb-3">
+            <Shield className="w-4 h-4 text-[#4A1420]" />
             <span>{isBn ? 'বায়োডাটার আমানত ও পারিবারিক শিষ্টাচার' : 'Family Privacy & Matrimonial Etiquette'}</span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs leading-relaxed text-[#3A4D63]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs leading-relaxed text-[#543940]">
             <div>
               <p className="mb-2">
-                <strong className="text-[#101D2B]">
+                <strong className="text-[#220D12]">
                   {isBn ? 'তথ্যের আমানত ও মর্যাদা রক্ষা:' : 'Trust & Confidentiality:'}
                 </strong>{' '}
                 {isBn
@@ -35,7 +35,7 @@ export const PrivacyFooter: React.FC<PrivacyFooterProps> = ({ profile, lang }) =
                   : 'This portfolio is intended for sharing with prospective families in good faith. Please honor the privacy and dignity of this personal and family information.'}
               </p>
               <p>
-                <strong className="text-[#101D2B]">
+                <strong className="text-[#220D12]">
                   {isBn ? 'পারিবারিক বোঝাপড়া ও সম্মান:' : 'Mutual Family Respect:'}
                 </strong>{' '}
                 {isBn
@@ -46,7 +46,7 @@ export const PrivacyFooter: React.FC<PrivacyFooterProps> = ({ profile, lang }) =
 
             <div>
               <p className="mb-2">
-                <strong className="text-[#101D2B]">
+                <strong className="text-[#220D12]">
                   {isBn ? 'ছবি ও তথ্যের শালীনতা:' : 'Photographic Dignity:'}
                 </strong>{' '}
                 {isBn
@@ -54,7 +54,7 @@ export const PrivacyFooter: React.FC<PrivacyFooterProps> = ({ profile, lang }) =
                   : 'All attached photographs are shared strictly for matrimonial consideration. Unauthorized reproduction or redistribution is discouraged.'}
               </p>
               <p>
-                <strong className="text-[#101D2B]">
+                <strong className="text-[#220D12]">
                   {isBn ? 'নেক দু‘আ ও শুভকামনা:' : 'Sincere Supplication:'}
                 </strong>{' '}
                 {isBn
@@ -66,12 +66,12 @@ export const PrivacyFooter: React.FC<PrivacyFooterProps> = ({ profile, lang }) =
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#0E294B]/15">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#4A1420]/15">
           <div className="text-center sm:text-left">
-            <div className={`text-sm font-bold text-[#0E294B] ${isBn ? 'font-bengali' : 'font-display'}`}>
+            <div className={`text-sm font-bold text-[#4A1420] ${isBn ? 'font-bengali' : 'font-display'}`}>
               {isBn ? profile.fullNameBn : profile.fullNameEn}
             </div>
-            <div className="text-[11px] text-[#3A4D63] mt-0.5">
+            <div className="text-[11px] text-[#543940] mt-0.5">
               {isBn
                 ? 'দ্বীনি নীতি ও পারস্পরিক শ্রদ্ধাবোধে সাজানো ইসলামিক জীবনবৃত্তান্ত'
                 : 'Islamic Matrimonial Portfolio · Dedicated to Faith & Honor'}
@@ -82,11 +82,11 @@ export const PrivacyFooter: React.FC<PrivacyFooterProps> = ({ profile, lang }) =
             <button
               type="button"
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white text-xs font-semibold text-[#0E294B] border border-[#0E294B]/20 hover:border-[#0E294B] transition-colors shadow-2xs"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white text-xs font-semibold text-[#4A1420] border border-[#4A1420]/20 hover:border-[#4A1420] transition-colors shadow-2xs"
               aria-label="Back to top of page"
             >
               <span>{isBn ? 'উপরে ফিরুন' : 'Back to Top'}</span>
-              <ArrowUp className="w-3.5 h-3.5 text-[#0E294B]" />
+              <ArrowUp className="w-3.5 h-3.5 text-[#4A1420]" />
             </button>
           </div>
         </div>
