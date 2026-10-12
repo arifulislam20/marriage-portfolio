@@ -20,7 +20,7 @@ export const IslamicSeal: React.FC<IslamicSealProps> = ({
 
   return (
     <div
-      className={`relative rounded-full p-1 bg-gradient-to-tr from-[#FCE8ED] via-white to-[#FCE8ED] border-2 border-[#4A1420]/30 shadow-md overflow-hidden flex items-center justify-center ${sizeClasses} ${className}`}
+      className={`relative rounded-full p-1 bg-gradient-to-tr from-[#DCF2E6] via-white to-[#DCF2E6] border-2 border-[#0E4331]/30 shadow-md overflow-hidden flex items-center justify-center ${sizeClasses} ${className}`}
     >
       {!imageError ? (
         <img
@@ -32,7 +32,7 @@ export const IslamicSeal: React.FC<IslamicSealProps> = ({
         />
       ) : (
         /* Vector Classical Islamic 8-pointed Star Khatam Crest Fallback */
-        <div className="w-full h-full rounded-full bg-gradient-to-br from-[#FCE8ED] to-white flex items-center justify-center text-[#4A1420]">
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-[#DCF2E6] to-white flex items-center justify-center text-[#0E4331]">
           <svg
             viewBox="0 0 100 100"
             className="w-full h-full p-1.5"
@@ -44,7 +44,7 @@ export const IslamicSeal: React.FC<IslamicSealProps> = ({
             <polygon
               points="50,5 64,36 95,50 64,64 50,95 36,64 5,50 36,36"
               fill="rgba(179, 142, 63, 0.2)"
-              stroke="#E8CE96"
+              stroke="#EBD399"
               strokeWidth="2.5"
             />
             {/* Interlaced Star Square 1 */}
@@ -69,24 +69,24 @@ export const IslamicSeal: React.FC<IslamicSealProps> = ({
               fill="none"
             />
             {/* Inner Rosette Circle */}
-            <circle cx="50" cy="50" r="16" stroke="#4A1420" strokeWidth="2" fill="#FCE8ED" />
-            <circle cx="50" cy="50" r="11" stroke="#4A1420" strokeWidth="1" strokeDasharray="2,2" />
+            <circle cx="50" cy="50" r="16" stroke="#0E4331" strokeWidth="2" fill="#DCF2E6" />
+            <circle cx="50" cy="50" r="11" stroke="#0E4331" strokeWidth="1" strokeDasharray="2,2" />
             {/* Center Arabic Calligraphic Floral Petals */}
             <path
               d="M50 42 C53 45 53 47 50 50 C47 47 47 45 50 42 Z"
-              fill="#4A1420"
+              fill="#0E4331"
             />
             <path
               d="M50 58 C53 55 53 53 50 50 C47 53 47 55 50 58 Z"
-              fill="#4A1420"
+              fill="#0E4331"
             />
             <path
               d="M42 50 C45 53 47 53 50 50 C47 47 45 47 42 50 Z"
-              fill="#4A1420"
+              fill="#0E4331"
             />
             <path
               d="M58 50 C55 53 53 53 50 50 C53 47 55 47 58 50 Z"
-              fill="#4A1420"
+              fill="#0E4331"
             />
             <circle cx="50" cy="50" r="2.5" fill="#FFFFFF" />
           </svg>

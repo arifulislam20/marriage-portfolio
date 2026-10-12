@@ -13,20 +13,20 @@
 @layer base {
   :root {
     --bg-page: #FFFFFF;
-    --bg-page-soft: #FAF5F6;
+    --bg-page-soft: #F9FAF8;
     --bg-header: rgba(255, 255, 255, 0.95);
     --bg-card: #FFFFFF;
-    --bg-card-subtle: #FAF0F2;
-    --bg-card-emerald: #4A1420;
-    --bg-emerald-deep: #340B13;
-    --text-primary: #220D12;
-    --text-secondary: #543940;
-    --text-emerald: #4A1420;
-    --text-emerald-light: #651C2C;
-    --gold-accent: #C89B3C;
-    --border-light: rgba(74, 20, 32, 0.12);
-    --border-emerald: rgba(74, 20, 32, 0.28);
-    --border-gold: rgba(200, 155, 60, 0.35);
+    --bg-card-subtle: #F3F8F5;
+    --bg-card-emerald: #0E4331;
+    --bg-emerald-deep: #092C20;
+    --text-primary: #122820;
+    --text-secondary: #42584E;
+    --text-emerald: #0E4331;
+    --text-emerald-light: #1A5E47;
+    --gold-accent: #B38E3F;
+    --border-light: rgba(14, 67, 49, 0.12);
+    --border-emerald: rgba(14, 67, 49, 0.28);
+    --border-gold: rgba(179, 142, 63, 0.35);
   }
 
   body {
@@ -55,54 +55,54 @@
 
 /* Classical Islamic 8-Pointed Star & Khatam Lattice (আটকোণা ইসলামী তারা ও খাতাম জালি ল্যাটিস) */
 .bg-islamic-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%234A1420' stroke-width='0.8' stroke-opacity='0.09'%3E%3Cpath d='M17.5 17.5h25v25h-25z'/%3E%3Cpath d='M30 12.32L47.68 30 30 47.68 12.32 30z'/%3E%3Ccircle cx='30' cy='30' r='5' stroke='%23C89B3C' stroke-opacity='0.25' stroke-width='0.9'/%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23C89B3C' fill-opacity='0.28'/%3E%3Cpath d='M0 12.5h12.5V0M0 17.68L17.68 0'/%3E%3Cpath d='M60 12.5h-12.5V0M60 17.68L42.32 0'/%3E%3Cpath d='M0 47.5h12.5V60M0 42.32L17.68 60'/%3E%3Cpath d='M60 47.5h-12.5V60M60 42.32L42.32 60'/%3E%3Ccircle cx='0' cy='0' r='5' stroke='%23C89B3C' stroke-opacity='0.25' stroke-width='0.9'/%3E%3Ccircle cx='60' cy='0' r='5' stroke='%23C89B3C' stroke-opacity='0.25' stroke-width='0.9'/%3E%3Ccircle cx='0' cy='60' r='5' stroke='%23C89B3C' stroke-opacity='0.25' stroke-width='0.9'/%3E%3Ccircle cx='60' cy='60' r='5' stroke='%23C89B3C' stroke-opacity='0.25' stroke-width='0.9'/%3E%3Cpath d='M17.68 0L30 12.32 42.32 0'/%3E%3Cpath d='M17.68 60L30 47.68 42.32 60'/%3E%3Cpath d='M0 17.68L12.32 30 0 42.32'/%3E%3Cpath d='M60 17.68L47.68 30 60 42.32'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%230E4331' stroke-width='0.8' stroke-opacity='0.09'%3E%3Cpath d='M17.5 17.5h25v25h-25z'/%3E%3Cpath d='M30 12.32L47.68 30 30 47.68 12.32 30z'/%3E%3Ccircle cx='30' cy='30' r='5' stroke='%23B38E3F' stroke-opacity='0.22' stroke-width='0.9'/%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23B38E3F' fill-opacity='0.25'/%3E%3Cpath d='M0 12.5h12.5V0M0 17.68L17.68 0'/%3E%3Cpath d='M60 12.5h-12.5V0M60 17.68L42.32 0'/%3E%3Cpath d='M0 47.5h12.5V60M0 42.32L17.68 60'/%3E%3Cpath d='M60 47.5h-12.5V60M60 42.32L42.32 60'/%3E%3Ccircle cx='0' cy='0' r='5' stroke='%23B38E3F' stroke-opacity='0.22' stroke-width='0.9'/%3E%3Ccircle cx='60' cy='0' r='5' stroke='%23B38E3F' stroke-opacity='0.22' stroke-width='0.9'/%3E%3Ccircle cx='0' cy='60' r='5' stroke='%23B38E3F' stroke-opacity='0.22' stroke-width='0.9'/%3E%3Ccircle cx='60' cy='60' r='5' stroke='%23B38E3F' stroke-opacity='0.22' stroke-width='0.9'/%3E%3Cpath d='M17.68 0L30 12.32 42.32 0'/%3E%3Cpath d='M17.68 60L30 47.68 42.32 60'/%3E%3Cpath d='M0 17.68L12.32 30 0 42.32'/%3E%3Cpath d='M60 17.68L47.68 30 60 42.32'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Islamic Starburst & Arabesque Fretwork Lattice (মাশরাবিয়া নক্ষত্র ও আরবেস্ক জালি নকশা) */
 .bg-islamic-lattice {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%234A1420' stroke-width='0.8' stroke-opacity='0.09'%3E%3Ccircle cx='32' cy='32' r='16' stroke-width='0.7'/%3E%3Ccircle cx='32' cy='32' r='8' stroke='%23C89B3C' stroke-opacity='0.25'/%3E%3Cpath d='M32 8v48M8 32h48M15 15l34 34M15 49l34-34'/%3E%3Ccircle cx='0' cy='0' r='16' stroke-width='0.7'/%3E%3Ccircle cx='64' cy='0' r='16' stroke-width='0.7'/%3E%3Ccircle cx='0' cy='64' r='16' stroke-width='0.7'/%3E%3Ccircle cx='64' cy='64' r='16' stroke-width='0.7'/%3E%3Cpath d='M32 16L48 32 32 48 16 32z' stroke='%23C89B3C' stroke-opacity='0.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%230E4331' stroke-width='0.8' stroke-opacity='0.09'%3E%3Ccircle cx='32' cy='32' r='16' stroke-width='0.7'/%3E%3Ccircle cx='32' cy='32' r='8' stroke='%23B38E3F' stroke-opacity='0.22'/%3E%3Cpath d='M32 8v48M8 32h48M15 15l34 34M15 49l34-34'/%3E%3Ccircle cx='0' cy='0' r='16' stroke-width='0.7'/%3E%3Ccircle cx='64' cy='0' r='16' stroke-width='0.7'/%3E%3Ccircle cx='0' cy='64' r='16' stroke-width='0.7'/%3E%3Ccircle cx='64' cy='64' r='16' stroke-width='0.7'/%3E%3Cpath d='M32 16L48 32 32 48 16 32z' stroke='%23B38E3F' stroke-opacity='0.18'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* Standardized White & Imperial Maroon Luxury Cards */
+/* Standardized White & Emerald Luxury Cards */
 .theme-card {
   background-color: #FFFFFF;
-  border: 1px solid rgba(74, 20, 32, 0.16);
+  border: 1px solid rgba(14, 67, 49, 0.16);
   color: var(--text-primary);
-  box-shadow: 0 4px 20px -2px rgba(74, 20, 32, 0.05);
+  box-shadow: 0 4px 20px -2px rgba(14, 67, 49, 0.05);
   transition: all 0.2s ease-in-out;
 }
 
 .theme-card:hover {
-  border-color: rgba(74, 20, 32, 0.35);
-  box-shadow: 0 8px 24px -4px rgba(74, 20, 32, 0.08);
+  border-color: rgba(14, 67, 49, 0.35);
+  box-shadow: 0 8px 24px -4px rgba(14, 67, 49, 0.08);
 }
 
 .theme-card-emerald {
-  background: linear-gradient(145deg, #4A1420 0%, #340B13 100%);
-  border: 1px solid rgba(200, 155, 60, 0.35);
+  background: linear-gradient(145deg, #0E4331 0%, #092C20 100%);
+  border: 1px solid rgba(179, 142, 63, 0.35);
   color: #FFFFFF;
-  box-shadow: 0 8px 28px -4px rgba(74, 20, 32, 0.25);
+  box-shadow: 0 8px 28px -4px rgba(14, 67, 49, 0.25);
 }
 
 .theme-subcard {
-  background-color: #FAF0F2;
-  border: 1px solid rgba(74, 20, 32, 0.14);
+  background-color: #F3F8F5;
+  border: 1px solid rgba(14, 67, 49, 0.14);
 }
 
 .theme-text-primary {
-  color: #220D12;
+  color: #122820;
 }
 
 .theme-text-secondary {
-  color: #543940;
+  color: #42584E;
 }
 
 .theme-text-emerald {
-  color: #4A1420;
+  color: #0E4331;
 }
 
 .theme-text-gold {
-  color: #C89B3C;
+  color: #B38E3F;
 }
 
 /* Print Stylesheet */

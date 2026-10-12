@@ -289,7 +289,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
   const currentImage = images[activeSlide];
 
   return (
-    <section id="gallery" className="py-12 border-t border-[#4A1420]/15 bg-[#FAF5F6]">
+    <section id="gallery" className="py-12 border-t border-[#0E4331]/15 bg-[#FBFDFB]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Universal Native Hidden File Input with Stable ID for Label Linking */}
         <input
@@ -305,7 +305,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
         {/* Clean, Clutter-Free Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
-            <h2 className={`text-2xl sm:text-3xl font-bold text-[#4A1420] ${isBn ? 'font-bengali' : 'font-display'}`}>
+            <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
               {isBn ? 'ব্যক্তিগত আলোকচিত্র' : 'Photographs'}
             </h2>
           </div>
@@ -315,7 +315,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
             {/* Native Label-Triggered Upload Button */}
             <label
               htmlFor="photo-gallery-native-input"
-              className="cursor-pointer inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#4A1420] text-white hover:bg-[#651C2C] active:bg-[#340B13] text-xs font-bold shadow-sm hover:shadow-md transition-all whitespace-nowrap"
+              className="cursor-pointer inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0E4331] text-white hover:bg-[#165B43] active:bg-[#092B20] text-xs font-bold shadow-sm hover:shadow-md transition-all whitespace-nowrap"
             >
               {isProcessing ? (
                 <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -329,14 +329,14 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
             <button
               type="button"
               onClick={() => exportStandaloneHtml(profile, images, lang)}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#FCE8ED] to-white border border-[#4A1420]/30 hover:border-[#4A1420] hover:from-[#FADDE4] hover:to-white text-[#4A1420] text-xs font-bold shadow-2xs transition-all whitespace-nowrap"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#D5EFE2] to-white border border-[#0E4331]/30 hover:border-[#0E4331] hover:from-[#C7EBD8] hover:to-white text-[#0E4331] text-xs font-bold shadow-2xs transition-all whitespace-nowrap"
               title={
                 isBn
                   ? 'ছবিসহ বায়োডাটার সম্পূর্ণ অফলাইন কপি ডাউনলোড করুন'
                   : 'Download Standalone copy with embedded photos'
               }
             >
-              <Download className="w-3.5 h-3.5 text-[#4A1420]" />
+              <Download className="w-3.5 h-3.5 text-[#0E4331]" />
               <span>{isBn ? 'সংরক্ষণ' : 'Save'}</span>
             </button>
 
@@ -355,7 +355,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
                 className={`flex items-center gap-1 px-3 py-2 rounded-xl text-xs transition-colors whitespace-nowrap ${
                   confirmClear
                     ? 'bg-red-600 text-white hover:bg-red-700 font-bold shadow-xs'
-                    : 'text-[#543940] hover:text-red-600 hover:bg-red-50 border border-transparent hover:border-red-200'
+                    : 'text-[#42584E] hover:text-red-600 hover:bg-red-50 border border-transparent hover:border-red-200'
                 }`}
                 title={isBn ? 'সকল ছবি মুছে ফেলুন' : 'Remove all photos'}
               >
@@ -376,8 +376,8 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
 
         {/* Processing Indicator Banner */}
         {isProcessing && (
-          <div className="mb-4 p-3.5 rounded-xl bg-[#FDF2F4] border border-[#4A1420]/30 text-[#4A1420] text-xs flex items-center justify-center gap-2.5 font-bold shadow-xs animate-pulse">
-            <Loader2 className="w-4 h-4 animate-spin text-[#4A1420]" />
+          <div className="mb-4 p-3.5 rounded-xl bg-[#EAF7F0] border border-[#0E4331]/30 text-[#0E4331] text-xs flex items-center justify-center gap-2.5 font-bold shadow-xs animate-pulse">
+            <Loader2 className="w-4 h-4 animate-spin text-[#0E4331]" />
             <span>{isBn ? 'ছবি প্রসেস হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন...' : 'Processing photo, please wait...'}</span>
           </div>
         )}
@@ -403,7 +403,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
               className={`relative rounded-3xl overflow-hidden bg-[#0A1A13] border transition-all shadow-xl select-none ${
-                dragActive ? 'border-[#E8CE96] ring-4 ring-[#E8CE96]/40' : 'border-[#4A1420]/25'
+                dragActive ? 'border-[#EBD399] ring-4 ring-[#EBD399]/40' : 'border-[#0E4331]/25'
               }`}
             >
               {/* Blurred Ambient Aura */}
@@ -433,7 +433,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
                 <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none no-print">
                   {/* Clean Slide Counter */}
                   <div className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-xs font-bold flex items-center gap-1.5 shadow-md">
-                    <ImageIcon className="w-3.5 h-3.5 text-[#E8CE96]" />
+                    <ImageIcon className="w-3.5 h-3.5 text-[#EBD399]" />
                     <span>
                       {isBn
                         ? `${activeSlide + 1} / ${images.length}`
@@ -446,7 +446,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
                     <button
                       type="button"
                       onClick={() => openLightbox(activeSlide)}
-                      className="p-2 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md border border-white/20 text-white hover:text-[#E8CE96] transition-all shadow-md cursor-pointer"
+                      className="p-2 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md border border-white/20 text-white hover:text-[#EBD399] transition-all shadow-md cursor-pointer"
                       title={isBn ? 'বড় করে দেখুন' : 'View Fullscreen'}
                     >
                       <Maximize2 className="w-4 h-4" />
@@ -468,7 +468,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
                   <button
                     type="button"
                     onClick={handlePrev}
-                    className="absolute left-2.5 sm:left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white text-[#4A1420] shadow-xl hover:shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-95 border border-[#4A1420]/20 z-10 no-print cursor-pointer"
+                    className="absolute left-2.5 sm:left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white text-[#0E4331] shadow-xl hover:shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-95 border border-[#0E4331]/20 z-10 no-print cursor-pointer"
                     aria-label="Previous slide"
                   >
                     <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -480,7 +480,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
                   <button
                     type="button"
                     onClick={handleNext}
-                    className="absolute right-2.5 sm:right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white text-[#4A1420] shadow-xl hover:shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-95 border border-[#4A1420]/20 z-10 no-print cursor-pointer"
+                    className="absolute right-2.5 sm:right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white text-[#0E4331] shadow-xl hover:shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-95 border border-[#0E4331]/20 z-10 no-print cursor-pointer"
                     aria-label="Next slide"
                   >
                     <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -490,7 +490,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
             </div>
 
             {/* Clean Minimal Thumbnail Strip */}
-            <div className="p-2.5 sm:p-3 rounded-2xl bg-white border border-[#4A1420]/15 shadow-2xs">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-white border border-[#0E4331]/15 shadow-2xs">
               <div className="flex items-center gap-2.5 overflow-x-auto pb-1 scrollbar-thin">
                 {images.map((image, idx) => (
                   <button
@@ -499,8 +499,8 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
                     onClick={() => selectSlide(idx)}
                     className={`relative shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 transition-all duration-200 cursor-pointer ${
                       activeSlide === idx
-                        ? 'border-[#4A1420] ring-3 ring-[#4A1420]/40 scale-105 shadow-md'
-                        : 'border-[#4A1420]/20 opacity-70 hover:opacity-100 hover:border-[#4A1420]/60'
+                        ? 'border-[#0E4331] ring-3 ring-[#0E4331]/40 scale-105 shadow-md'
+                        : 'border-[#0E4331]/20 opacity-70 hover:opacity-100 hover:border-[#0E4331]/60'
                     }`}
                   >
                     <img
@@ -518,7 +518,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
                 {/* Quick Add More Tile */}
                 <label
                   htmlFor="photo-gallery-native-input"
-                  className="cursor-pointer shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 border-dashed border-[#4A1420]/40 hover:border-[#4A1420] hover:bg-[#FAF0F2] active:bg-[#DDF0E6] flex flex-col items-center justify-center gap-1 text-[#4A1420] transition-all"
+                  className="cursor-pointer shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 border-dashed border-[#0E4331]/40 hover:border-[#0E4331] hover:bg-[#F0F7F4] active:bg-[#DDF0E6] flex flex-col items-center justify-center gap-1 text-[#0E4331] transition-all"
                   title={isBn ? 'আরও ছবি যোগ করুন' : 'Add another photo'}
                 >
                   <Plus className="w-5 h-5" />
@@ -537,11 +537,11 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
             onDrop={handleDrop}
             className={`block p-8 sm:p-12 rounded-3xl border-2 border-dashed transition-all cursor-pointer text-center relative overflow-hidden select-none active:scale-[0.99] ${
               dragActive
-                ? 'border-[#4A1420] bg-[#FAF0F2] scale-[1.01]'
-                : 'border-[#4A1420]/30 bg-white hover:border-[#4A1420] hover:bg-[#FAF5F6] shadow-sm'
+                ? 'border-[#0E4331] bg-[#F0F7F4] scale-[1.01]'
+                : 'border-[#0E4331]/30 bg-white hover:border-[#0E4331] hover:bg-[#F9FAF8] shadow-sm'
             }`}
           >
-            <div className="w-14 h-14 mx-auto mb-3.5 rounded-full bg-gradient-to-br from-[#FCE8ED] to-white border border-[#4A1420]/25 flex items-center justify-center text-[#4A1420] shadow-2xs">
+            <div className="w-14 h-14 mx-auto mb-3.5 rounded-full bg-gradient-to-br from-[#DCF2E6] to-white border border-[#0E4331]/25 flex items-center justify-center text-[#0E4331] shadow-2xs">
               {isProcessing ? (
                 <Loader2 className="w-7 h-7 animate-spin" />
               ) : (
@@ -549,13 +549,13 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
               )}
             </div>
 
-            <h3 className={`text-base sm:text-lg font-bold text-[#220D12] mb-4 ${isBn ? 'font-bengali' : 'font-display'}`}>
+            <h3 className={`text-base sm:text-lg font-bold text-[#122820] mb-4 ${isBn ? 'font-bengali' : 'font-display'}`}>
               {isProcessing
                 ? (isBn ? 'ছবি প্রসেস হচ্ছে...' : 'Processing...')
                 : (isBn ? 'ছবি যুক্ত করতে স্পর্শ করুন' : 'Tap to add photographs')}
             </h3>
 
-            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#4A1420] text-white text-xs sm:text-sm font-bold shadow-md hover:bg-[#651C2C] active:bg-[#340B13] transition-colors pointer-events-none">
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0E4331] text-white text-xs sm:text-sm font-bold shadow-md hover:bg-[#165B43] active:bg-[#092B20] transition-colors pointer-events-none">
               {isProcessing ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
               ) : (
@@ -626,7 +626,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
               className="max-w-full max-h-[80vh] object-contain rounded-2xl border border-white/20 shadow-2xl"
               referrerPolicy="no-referrer"
             />
-            <div className="mt-3 text-xs text-[#E8CE96] font-bold tracking-wider">
+            <div className="mt-3 text-xs text-[#EBD399] font-bold tracking-wider">
               {`${activeSlide + 1} / ${images.length}`}
             </div>
           </div>
