@@ -16,51 +16,51 @@ export const Navbar: React.FC<NavbarProps> = ({
   const isBn = lang === 'bn';
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#0E4331]/15 transition-colors duration-200 no-print shadow-xs">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#0E294B]/15 transition-colors duration-200 no-print shadow-xs">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-8">
         {/* Zone 1: Brand Wordmark (Single text element in display face) */}
         <a
           href="#hero"
-          className={`text-base sm:text-lg font-bold tracking-wide text-[#0E4331] hover:text-[#165B43] transition-colors whitespace-nowrap shrink-0 ${isBn ? 'font-bengali' : 'font-english'}`}
+          className={`text-base sm:text-lg font-bold tracking-wide text-[#0E294B] hover:text-[#163C6B] transition-colors whitespace-nowrap shrink-0 ${isBn ? 'font-bengali' : 'font-english'}`}
         >
           {isBn ? 'আরিফুল ইসলাম নাঈম' : 'Ariful Islam Naime'}
         </a>
 
         {/* Zone 2: Concise Single-line Nav Links */}
-        <nav className="hidden md:flex items-center gap-6 text-xs sm:text-sm font-medium text-[#42584E]">
+        <nav className="hidden md:flex items-center gap-6 text-xs sm:text-sm font-medium text-[#3A4D63]">
           <a
             href="#details"
-            className="hover:text-[#0E4331] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
+            className="hover:text-[#0E294B] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
           >
             {isBn ? 'জীবনবৃত্তান্ত' : 'Overview'}
           </a>
           <a
             href="#education"
-            className="hover:text-[#0E4331] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
+            className="hover:text-[#0E294B] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
           >
             {isBn ? 'শিক্ষা ও কর্ম' : 'Qualifications'}
           </a>
           <a
             href="#family"
-            className="hover:text-[#0E4331] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
+            className="hover:text-[#0E294B] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
           >
             {isBn ? 'পরিবার' : 'Family'}
           </a>
           <a
             href="#intentions"
-            className="hover:text-[#0E4331] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
+            className="hover:text-[#0E294B] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
           >
             {isBn ? 'প্রত্যাশা' : 'Intentions'}
           </a>
           <a
             href="#gallery"
-            className="hover:text-[#0E4331] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
+            className="hover:text-[#0E294B] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
           >
             {isBn ? 'গ্যালারি' : 'Gallery'}
           </a>
           <a
             href="#contact"
-            className="hover:text-[#0E4331] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
+            className="hover:text-[#0E294B] transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
           >
             {isBn ? 'যোগাযোগ' : 'Contact'}
           </a>
@@ -72,10 +72,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             type="button"
             onClick={onToggleLang}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#0E4331]/25 bg-white text-[#0E4331] hover:bg-[#F2F8F5] text-xs font-semibold transition-colors whitespace-nowrap shrink-0"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#0E294B]/25 bg-white text-[#0E294B] hover:bg-[#F0F4F9] text-xs font-semibold transition-colors whitespace-nowrap shrink-0"
             aria-label="Switch Language"
           >
-            <Globe className="w-3.5 h-3.5 text-[#0E4331]" />
+            <Globe className="w-3.5 h-3.5 text-[#0E294B]" />
             <span>{isBn ? 'English' : 'বাংলা'}</span>
           </button>
 
@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             type="button"
             onClick={onPrint}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#D5EFE2] to-white border border-[#0E4331]/30 text-[#0E4331] hover:border-[#0E4331] hover:from-[#C7EBD8] hover:to-white text-xs font-bold transition-all whitespace-nowrap shrink-0 shadow-xs"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#D3E2F2] to-white border border-[#0E294B]/30 text-[#0E294B] hover:border-[#0E294B] hover:from-[#C5DAF0] hover:to-white text-xs font-bold transition-all whitespace-nowrap shrink-0 shadow-xs"
             title={isBn ? 'বায়োডাটা প্রিন্ট বা পিডিএফ সংরক্ষণ করুন' : 'Print or Save as PDF'}
           >
             <Printer className="w-3.5 h-3.5" />

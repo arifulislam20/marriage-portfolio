@@ -37,7 +37,7 @@ export const IslamicToron: React.FC<IslamicToronProps> = ({ className = '' }) =>
           <radialGradient id="innerGlow" cx="50%" cy="100%" r="60%">
             <stop offset="0%" stopColor="#25A078" stopOpacity="0.25" />
             <stop offset="60%" stopColor="#125B43" stopOpacity="0.08" />
-            <stop offset="100%" stopColor="#0E4331" stopOpacity="0" />
+            <stop offset="100%" stopColor="#0E294B" stopOpacity="0" />
           </radialGradient>
 
           {/* Horizontal accent line fade */}

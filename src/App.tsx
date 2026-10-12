@@ -156,7 +156,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-white text-[#122820] flex flex-col ${lang === 'bn' ? 'font-bengali' : 'font-english'} transition-colors duration-200 selection:bg-[#0E4331]/15 selection:text-[#0E4331]`}>
+    <div className={`min-h-screen bg-white text-[#101D2B] flex flex-col ${lang === 'bn' ? 'font-bengali' : 'font-english'} transition-colors duration-200 selection:bg-[#0E294B]/15 selection:text-[#0E294B]`}>
       {/* Top Bar Navigation */}
       <Navbar
         lang={lang}
