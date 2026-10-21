@@ -18,7 +18,7 @@ export const PrivacyFooter: React.FC<PrivacyFooterProps> = ({ profile, lang }) =
     <footer className="pt-12 pb-16 border-t border-[#0E4331]/15 bg-[#F6FAF7] text-xs text-[#42584E]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Matrimonial Privacy & Etiquette Notice Box */}
-        <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs mb-10">
+        <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs mb-10 stacked-card">
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-3">
             <Shield className="w-4 h-4 text-[#0E4331]" />
             <span>{isBn ? 'বায়োডাটার আমানত ও পারিবারিক শিষ্টাচার' : 'Family Privacy & Matrimonial Etiquette'}</span>

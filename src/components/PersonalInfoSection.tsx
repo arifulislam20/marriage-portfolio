@@ -26,7 +26,7 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
         {/* Top Info Grid: 6 Essential Attributes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {/* 1. Full Name */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors stacked-card stack-stagger-1">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
               <User className="w-3.5 h-3.5" />
               <span>{isBn ? 'পূর্ণ নাম' : 'Full Name'}</span>
@@ -40,7 +40,7 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           </div>
 
           {/* 2. Date of Birth */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors stacked-card stack-stagger-2">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
               <Calendar className="w-3.5 h-3.5" />
               <span>{isBn ? 'জন্ম তারিখ ও বয়স' : 'Date of Birth & Age'}</span>
@@ -54,7 +54,7 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           </div>
 
           {/* 3. Height */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors stacked-card stack-stagger-3">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
               <Ruler className="w-3.5 h-3.5" />
               <span>{isBn ? 'উচ্চতা' : 'Height'}</span>
@@ -68,7 +68,7 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           </div>
 
           {/* 4. Complexion & Physical Status */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors stacked-card stack-stagger-4">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
               <User className="w-3.5 h-3.5" />
               <span>{isBn ? 'গায়ের রঙ ও শারীরিক অবস্থা' : 'Complexion & Physical Status'}</span>
@@ -82,7 +82,7 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           </div>
 
           {/* 5. Marital Status */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors stacked-card stack-stagger-5">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
               <HeartHandshake className="w-3.5 h-3.5" />
               <span>{isBn ? 'বৈবাহিক অবস্থা' : 'Marital Status'}</span>
@@ -96,7 +96,7 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           </div>
 
           {/* 6. Ideology & Religion */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors stacked-card stack-stagger-6">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
               <HeartHandshake className="w-3.5 h-3.5" />
               <span>{isBn ? 'ধর্মীয় আদর্শ ও মাযহাব' : 'Religious Ideology'}</span>
@@ -113,7 +113,7 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
         {/* Addresses Section: STRICTLY SEPARATE FIELDS AS REQUIRED */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Current Address */}
-          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/25 shadow-sm relative">
+          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/25 shadow-sm relative stacked-card stack-stagger-1">
             <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-3">
               <MapPin className="w-4 h-4 text-[#0E4331]" />
               <span>{isBn ? 'বর্তমান ঠিকানা' : 'Current Address'}</span>
@@ -127,7 +127,7 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           </div>
 
           {/* Permanent Address */}
-          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/25 shadow-sm relative">
+          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/25 shadow-sm relative stacked-card stack-stagger-2">
             <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-3">
               <Home className="w-4 h-4 text-[#0E4331]" />
               <span>{isBn ? 'স্থায়ী ঠিকানা' : 'Permanent Address'}</span>

@@ -402,7 +402,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
-              className={`relative rounded-3xl overflow-hidden bg-[#0A1A13] border transition-all shadow-xl select-none ${
+              className={`relative rounded-3xl overflow-hidden bg-[#0A1A13] border transition-all shadow-xl select-none stacked-card ${
                 dragActive ? 'border-[#EBD399] ring-4 ring-[#EBD399]/40' : 'border-[#0E4331]/25'
               }`}
             >
@@ -490,7 +490,7 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
             </div>
 
             {/* Clean Minimal Thumbnail Strip */}
-            <div className="p-2.5 sm:p-3 rounded-2xl bg-white border border-[#0E4331]/15 shadow-2xs">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-white border border-[#0E4331]/15 shadow-2xs stacked-inner-card inner-stagger-1">
               <div className="flex items-center gap-2.5 overflow-x-auto pb-1 scrollbar-thin">
                 {images.map((image, idx) => (
                   <button

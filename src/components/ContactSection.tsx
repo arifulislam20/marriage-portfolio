@@ -27,7 +27,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
         {/* Contact Arrangements Card */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Primary Preference: Guardian Contact */}
-          <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs flex flex-col justify-between">
+          <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs flex flex-col justify-between stacked-card stack-stagger-1">
             <div>
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-3">
                 <ShieldCheck className="w-4 h-4 text-[#0E4331]" />
@@ -46,7 +46,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
             </div>
 
             {/* Direct Guardian Phone CTA - Light Green to White Gradient Box */}
-            <div className="p-4 rounded-xl bg-gradient-to-r from-[#DCF2E6] via-[#EEF8F3] to-white border border-[#0E4331]/25 text-[#122820] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+            <div className="p-4 rounded-xl bg-gradient-to-r from-[#DCF2E6] via-[#EEF8F3] to-white border border-[#0E4331]/25 text-[#122820] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs stacked-inner-card inner-stagger-1">
               <div>
                 <div className="text-[11px] font-bold text-[#0E4331] uppercase tracking-wider mb-0.5 flex items-center gap-1.5">
                   <UserCheck className="w-3.5 h-3.5 text-[#0E4331]" />
@@ -73,7 +73,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
           </div>
 
           {/* Public Email Option */}
-          <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs flex flex-col justify-between">
+          <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs flex flex-col justify-between stacked-card stack-stagger-2">
             <div>
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-3">
                 <Mail className="w-4 h-4 text-[#0E4331]" />
@@ -93,7 +93,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
 
             <div>
               {/* Mailto link rendered exactly as supplied */}
-              <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+              <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3 stacked-inner-card inner-stagger-1">
                 <div className="overflow-hidden">
                   <div className="text-[11px] font-bold text-[#0E4331] uppercase tracking-wider mb-0.5">
                     {isBn ? 'পাবলিক ইমেইল' : 'Public Email'}

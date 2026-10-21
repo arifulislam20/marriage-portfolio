@@ -25,7 +25,7 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
         </div>
 
         {/* Father's Info Box - STRICTLY 3 SEPARATE FIELDS WITH DISTINCT LABELS */}
-        <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs mb-6">
+        <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs mb-6 stacked-card">
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-5">
             <Users className="w-4 h-4 text-[#0E4331]" />
             <span>{isBn ? 'পিতার তথ্যাবলি (অভিভাবক)' : "Father's Details (Primary Guardian)"}</span>
@@ -33,7 +33,7 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Field 1: Father's Name */}
-            <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15">
+            <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15 stacked-inner-card inner-stagger-1">
               <div className="text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-1.5 flex items-center gap-1.5">
                 <UserCheck className="w-3.5 h-3.5" />
                 <span>{isBn ? 'পিতার নাম' : "Father's Name"}</span>
@@ -47,7 +47,7 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
             </div>
 
             {/* Field 2: Father's Occupation */}
-            <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15">
+            <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15 stacked-inner-card inner-stagger-2">
               <div className="text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-1.5 flex items-center gap-1.5">
                 <Briefcase className="w-3.5 h-3.5" />
                 <span>{isBn ? 'পিতার পেশা ও দ্বীনি পরিচিতি' : "Father's Occupation & Faith"}</span>
@@ -63,7 +63,7 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
             </div>
 
             {/* Field 3: Father's Phone Number (Clickable tel: link) */}
-            <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15">
+            <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15 stacked-inner-card inner-stagger-3">
               <div className="text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-1.5 flex items-center gap-1.5">
                 <Phone className="w-3.5 h-3.5" />
                 <span>{isBn ? 'পিতার মোবাইল নম্বর' : "Father's Contact Number"}</span>
@@ -87,7 +87,7 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
         {/* Mother, Siblings and Family Environment Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Mother's Info */}
-          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs">
+          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs stacked-card stack-stagger-1">
             <div className="text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-2 flex items-center gap-1.5">
               <Heart className="w-3.5 h-3.5 text-[#0E4331]" />
               <span>{isBn ? 'মাতার তথ্যাবলি' : "Mother's Details"}</span>
@@ -104,7 +104,7 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
           </div>
 
           {/* Siblings Info */}
-          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs">
+          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs stacked-card stack-stagger-2">
             <div className="text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-2 flex items-center gap-1.5">
               <Users className="w-3.5 h-3.5 text-[#0E4331]" />
               <span>{isBn ? 'ভাই-বোন ও পরিবারে অবস্থান' : 'Siblings & Position'}</span>

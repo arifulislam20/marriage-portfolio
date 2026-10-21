@@ -17,7 +17,7 @@ export const FaithOutlookSection: React.FC<FaithOutlookSectionProps> = ({ profil
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Faith Centerpiece Box - Light Green to White Gradient */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#DCF2E6] via-[#EEF8F3] to-white border-2 border-[#0E4331]/25 shadow-lg text-center relative overflow-hidden text-[#122820]">
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#DCF2E6] via-[#EEF8F3] to-white border-2 border-[#0E4331]/25 shadow-lg text-center relative overflow-hidden text-[#122820] stacked-card">
           {/* Subtle Decorative Corner Ornaments */}
           <div className="absolute top-4 left-4 text-[#0E4331]/30 text-xs font-cinzel">✦</div>
           <div className="absolute top-4 right-4 text-[#0E4331]/30 text-xs font-cinzel">✦</div>

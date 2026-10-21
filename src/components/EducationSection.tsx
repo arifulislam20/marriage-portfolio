@@ -28,7 +28,7 @@ export const EducationSection: React.FC<EducationSectionProps> = ({ profile, lan
           {profile.education.map((edu, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors relative overflow-hidden"
+              className={`p-6 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors relative overflow-hidden stacked-card stack-stagger-${idx + 1}`}
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#DCF2E6] to-white border border-[#0E4331]/25 text-[#0E4331] flex items-center justify-center shrink-0 shadow-xs">
@@ -57,14 +57,14 @@ export const EducationSection: React.FC<EducationSectionProps> = ({ profile, lan
         </div>
 
         {/* Official Examination Boards Callout */}
-        <div className="p-6 rounded-2xl bg-[#F0F7F4] border border-[#0E4331]/20 shadow-xs">
+        <div className="p-6 rounded-2xl bg-[#F0F7F4] border border-[#0E4331]/20 shadow-xs stacked-card">
           <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-4">
             <Award className="w-4 h-4 text-[#0E4331]" />
             <span>{isBn ? 'পরীক্ষাগত বোর্ড ও স্বীকৃতি' : 'Central Examination Background'}</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/15 shadow-xs">
+            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/15 shadow-xs stacked-inner-card inner-stagger-1">
               <div className="flex items-center gap-2 text-xs text-[#0E4331] font-bold mb-1">
                 <BookCheck className="w-3.5 h-3.5" />
                 <span>{isBn ? 'দাওরায়ে হাদিস বোর্ড' : 'Dawrah Examination Board'}</span>
@@ -76,7 +76,7 @@ export const EducationSection: React.FC<EducationSectionProps> = ({ profile, lan
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/15 shadow-xs">
+            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/15 shadow-xs stacked-inner-card inner-stagger-2">
               <div className="flex items-center gap-2 text-xs text-[#0E4331] font-bold mb-1">
                 <Shield className="w-3.5 h-3.5" />
                 <span>{isBn ? 'মিশকাত জামাত বোর্ড' : 'Mishkat Examination Board'}</span>

@@ -42,7 +42,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ profile, lang }) => {
         {/* Centered Editorial Introduction & Highlights (3D element removed) */}
         <div className="max-w-4xl mx-auto space-y-6 mb-12">
           {/* Hero Feature Card - Light Green to White Gradient */}
-          <div className="p-6 sm:p-10 rounded-2xl bg-gradient-to-br from-[#DCF2E6] via-[#EEF8F3] to-white text-[#122820] border border-[#0E4331]/25 shadow-md relative overflow-hidden">
+          <div className="p-6 sm:p-10 rounded-2xl bg-gradient-to-br from-[#DCF2E6] via-[#EEF8F3] to-white text-[#122820] border border-[#0E4331]/25 shadow-md relative overflow-hidden stacked-card">
             <div className="flex items-center gap-2 mb-4 text-[#0E4331]">
               <Sparkles className="w-4 h-4" />
               <span className={`text-xs uppercase tracking-wider font-bold ${isBn ? 'font-bengali' : 'font-cinzel'}`}>
@@ -69,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ profile, lang }) => {
 
           {/* Quick Highlights Strip on White Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
-            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors stacked-inner-card inner-stagger-1">
               <div className="flex items-center gap-1.5 text-xs font-bold text-[#0E4331] mb-1">
                 <BookOpen className="w-3.5 h-3.5" />
                 <span>{isBn ? 'দাওরায়ে হাদিস' : 'Takmil (Dawrah)'}</span>
@@ -79,7 +79,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ profile, lang }) => {
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors stacked-inner-card inner-stagger-2">
               <div className="flex items-center gap-1.5 text-xs font-bold text-[#0E4331] mb-1">
                 <Briefcase className="w-3.5 h-3.5" />
                 <span>{isBn ? 'কর্মস্থল' : 'Workplace'}</span>
@@ -89,7 +89,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ profile, lang }) => {
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors stacked-inner-card inner-stagger-3">
               <div className="flex items-center gap-1.5 text-xs font-bold text-[#0E4331] mb-1">
                 <UserCheck className="w-3.5 h-3.5" />
                 <span>{isBn ? 'বয়স / জন্ম' : 'Birth / Age'}</span>
@@ -99,7 +99,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ profile, lang }) => {
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+            <div className="p-4 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors stacked-inner-card inner-stagger-4">
               <div className="flex items-center gap-1.5 text-xs font-bold text-[#0E4331] mb-1">
                 <Heart className="w-3.5 h-3.5" />
                 <span>{isBn ? 'আদর্শ' : 'Aspiration'}</span>
