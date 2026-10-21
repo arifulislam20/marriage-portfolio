@@ -14,7 +14,6 @@ import {
   Loader2,
   AlertCircle,
 } from 'lucide-react';
-import { ManuscriptChapterHeader, ManuscriptCorner, ManuscriptRosette } from './ManuscriptDecorations';
 
 interface PhotoGallerySectionProps {
   images: GalleryImage[];
@@ -303,76 +302,76 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
           onChange={(e) => handleFileSelection(e.target.files)}
         />
 
-        {/* Royal Manuscript Chapter Header */}
-        <ManuscriptChapterHeader
-          chapterNumber={isBn ? 'পরিচ্ছেদ ০৭' : 'CHAPTER VII'}
-          title={isBn ? 'ব্যক্তিগত শালীন আলোকচিত্র গ্যালারি' : 'Photographic Portfolio'}
-          subtitle={isBn ? 'মার্জিত ও শালীন পোশাক পরিহিত সাম্প্রতিক আলোকচিত্রের স্লাইডার' : 'Recent formal and modest photographs presented with dignity'}
-          arabicPhrase="الصُّوَرُ الشَّخْصِيَّةُ الْمُحْتَشِمَةُ"
-          lang={lang}
-        />
+        {/* Clean, Clutter-Free Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <div>
+            <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
+              {isBn ? 'ব্যক্তিগত আলোকচিত্র' : 'Photographs'}
+            </h2>
+          </div>
 
-        {/* Action Bar - Illuminated Manuscript Toolbar */}
-        <div className="flex items-center justify-center gap-3 no-print flex-wrap mb-6">
-          {/* Native Label-Triggered Upload Button */}
-          <label
-            htmlFor="photo-gallery-native-input"
-            className="cursor-pointer inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#0E4331] text-white hover:bg-[#165B43] active:bg-[#092B20] text-xs font-bold shadow-sm hover:shadow-md transition-all whitespace-nowrap border border-[#C89B3C]/50"
-          >
-            {isProcessing ? (
-              <Loader2 className="w-3.5 h-3.5 animate-spin" />
-            ) : (
-              <Plus className="w-3.5 h-3.5 text-[#C89B3C]" />
-            )}
-            <span>{isProcessing ? (isBn ? 'যুক্ত হচ্ছে...' : 'Processing...') : (isBn ? 'ছবি যোগ করুন' : 'Add Photo')}</span>
-          </label>
+          {/* Action Bar */}
+          <div className="flex items-center gap-2.5 no-print flex-wrap">
+            {/* Native Label-Triggered Upload Button */}
+            <label
+              htmlFor="photo-gallery-native-input"
+              className="cursor-pointer inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0E4331] text-white hover:bg-[#165B43] active:bg-[#092B20] text-xs font-bold shadow-sm hover:shadow-md transition-all whitespace-nowrap"
+            >
+              {isProcessing ? (
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              ) : (
+                <Plus className="w-3.5 h-3.5" />
+              )}
+              <span>{isProcessing ? (isBn ? 'যুক্ত হচ্ছে...' : 'Processing...') : (isBn ? 'ছবি যোগ করুন' : 'Add Photo')}</span>
+            </label>
 
-          {/* Export Standalone HTML with photos */}
-          <button
-            type="button"
-            onClick={() => exportStandaloneHtml(profile, images, lang)}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-[#D5EFE2] via-white to-[#D5EFE2] border border-[#C89B3C]/50 hover:border-[#0E4331] text-[#0E4331] text-xs font-bold shadow-2xs transition-all whitespace-nowrap"
-            title={
-              isBn
-                ? 'ছবিসহ বায়োডাটার সম্পূর্ণ অফলাইন কপি ডাউনলোড করুন'
-                : 'Download Standalone copy with embedded photos'
-            }
-          >
-            <Download className="w-3.5 h-3.5 text-[#C89B3C]" />
-            <span>{isBn ? 'অফলাইন কপি সংরক্ষণ' : 'Save Offline'}</span>
-          </button>
-
-          {images.length > 0 && (
+            {/* Export Standalone HTML with photos */}
             <button
               type="button"
-              onClick={() => {
-                if (!confirmClear) {
-                  setConfirmClear(true);
-                  setTimeout(() => setConfirmClear(false), 4000);
-                } else {
-                  onClearImages();
-                  setConfirmClear(false);
-                }
-              }}
-              className={`flex items-center gap-1 px-3.5 py-2 rounded-full text-xs transition-colors whitespace-nowrap ${
-                confirmClear
-                  ? 'bg-red-600 text-white hover:bg-red-700 font-bold shadow-xs'
-                  : 'text-[#42584E] hover:text-red-600 hover:bg-red-50 border border-transparent hover:border-red-200'
-              }`}
-              title={isBn ? 'সকল ছবি মুছে ফেলুন' : 'Remove all photos'}
+              onClick={() => exportStandaloneHtml(profile, images, lang)}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#D5EFE2] to-white border border-[#0E4331]/30 hover:border-[#0E4331] hover:from-[#C7EBD8] hover:to-white text-[#0E4331] text-xs font-bold shadow-2xs transition-all whitespace-nowrap"
+              title={
+                isBn
+                  ? 'ছবিসহ বায়োডাটার সম্পূর্ণ অফলাইন কপি ডাউনলোড করুন'
+                  : 'Download Standalone copy with embedded photos'
+              }
             >
-              <Trash2 className="w-3.5 h-3.5" />
-              <span>
-                {confirmClear
-                  ? isBn
-                    ? 'নিশ্চিত মুছবেন?'
-                    : 'Confirm Clear?'
-                  : isBn
-                  ? 'সব মুছুন'
-                  : 'Clear'}
-              </span>
+              <Download className="w-3.5 h-3.5 text-[#0E4331]" />
+              <span>{isBn ? 'সংরক্ষণ' : 'Save'}</span>
             </button>
-          )}
+
+            {images.length > 0 && (
+              <button
+                type="button"
+                onClick={() => {
+                  if (!confirmClear) {
+                    setConfirmClear(true);
+                    setTimeout(() => setConfirmClear(false), 4000);
+                  } else {
+                    onClearImages();
+                    setConfirmClear(false);
+                  }
+                }}
+                className={`flex items-center gap-1 px-3 py-2 rounded-xl text-xs transition-colors whitespace-nowrap ${
+                  confirmClear
+                    ? 'bg-red-600 text-white hover:bg-red-700 font-bold shadow-xs'
+                    : 'text-[#42584E] hover:text-red-600 hover:bg-red-50 border border-transparent hover:border-red-200'
+                }`}
+                title={isBn ? 'সকল ছবি মুছে ফেলুন' : 'Remove all photos'}
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+                <span>
+                  {confirmClear
+                    ? isBn
+                      ? 'নিশ্চিত মুছবেন?'
+                      : 'Confirm Clear?'
+                    : isBn
+                    ? 'সব মুছুন'
+                    : 'Clear'}
+                </span>
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Processing Indicator Banner */}
@@ -391,10 +390,10 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
           </div>
         )}
 
-        {/* Main State-of-the-Art Slider Container with Royal Gilded Frame */}
+        {/* Main State-of-the-Art Slider Container with Smooth Animated Transitions */}
         {images.length > 0 ? (
           <div className="space-y-3.5">
-            {/* The Main Slide Frame with Royal Gilded Ornaments */}
+            {/* The Main Slide Frame */}
             <div
               onDragEnter={handleDrag}
               onDragLeave={handleDrag}
@@ -403,19 +402,13 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
-              className={`relative rounded-3xl overflow-hidden bg-[#0A1A13] border-2 border-[#0E4331]/40 ring-2 ring-[#C89B3C]/50 transition-all shadow-2xl select-none stacked-card ${
-                dragActive ? 'border-[#EBD399] ring-4 ring-[#EBD399]/60' : ''
+              className={`relative rounded-3xl overflow-hidden bg-[#0A1A13] border transition-all shadow-xl select-none ${
+                dragActive ? 'border-[#EBD399] ring-4 ring-[#EBD399]/40' : 'border-[#0E4331]/25'
               }`}
             >
-              {/* Four Gilded Corner Rosettes on the Picture Frame */}
-              <ManuscriptCorner position="top-left" size={36} />
-              <ManuscriptCorner position="top-right" size={36} />
-              <ManuscriptCorner position="bottom-left" size={36} />
-              <ManuscriptCorner position="bottom-right" size={36} />
-
               {/* Blurred Ambient Aura */}
               <div
-                className="absolute inset-0 bg-cover bg-center filter blur-3xl opacity-35 scale-110 pointer-events-none transition-all duration-700"
+                className="absolute inset-0 bg-cover bg-center filter blur-3xl opacity-30 scale-110 pointer-events-none transition-all duration-700"
                 style={{ backgroundImage: `url(${currentImage.dataUrl})` }}
               />
 

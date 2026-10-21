@@ -1,7 +1,6 @@
 import React from 'react';
 import { Language, ProfileData } from '../types';
 import { Mail, Phone, ShieldCheck, AlertCircle, UserCheck } from 'lucide-react';
-import { ManuscriptChapterHeader, ManuscriptCorner } from './ManuscriptDecorations';
 
 interface ContactSectionProps {
   profile: ProfileData;
@@ -13,25 +12,25 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
   const cleanPhone = profile.fatherPhone.replace(/[^0-9]/g, '');
 
   return (
-    <section id="contact" className="py-12 border-t border-[#0E4331]/15 bg-[#FCFDFB]">
+    <section id="contact" className="py-12 border-t border-[#0E4331]/15 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Manuscript Chapter Header */}
-        <ManuscriptChapterHeader
-          chapterNumber={isBn ? 'পরিচ্ছেদ ০৮' : 'CHAPTER VIII'}
-          title={isBn ? 'অভিভাবকীয় যোগাযোগ দফতর ও বার্তা মাধ্যম' : 'Guardian Contact & Inquiries'}
-          subtitle={isBn ? 'সম্মানিত অভিভাবক (পিতা)-এর সরাসরি টেলিফোন নম্বর ও লিখিত যোগাযোগের আনুষ্ঠানিক মাধ্যম' : 'Direct guardian telephonic line and formal written correspondence'}
-          arabicPhrase="التَّوَاصُلُ مَعَ وَلِيِّ الأَمْرِ"
-          lang={lang}
-        />
+        {/* Section Header */}
+        <div className="mb-8">
+          <div className={`text-xs uppercase tracking-widest text-[#0E4331] ${isBn ? 'font-bengali' : 'font-cinzel'} mb-1 font-bold`}>
+            {isBn ? 'যোগাযোগ' : 'Contact Information'}
+          </div>
+          <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
+            {isBn ? 'অভিভাবকের মাধ্যমে যোগাযোগ ও আনুষ্ঠানিক মাধ্যম' : 'Guardian Contact & Inquiries'}
+          </h2>
+        </div>
 
         {/* Contact Arrangements Card */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Primary Preference: Guardian Contact */}
-          <div className="p-6 sm:p-7 rounded-2xl bg-white border-2 border-[#0E4331]/20 ring-1 ring-[#C89B3C]/40 shadow-sm flex flex-col justify-between relative overflow-hidden stacked-card">
-            <ManuscriptCorner position="top-right" size={24} />
+          <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-3">
-                <ShieldCheck className="w-4 h-4 text-[#C89B3C]" />
+                <ShieldCheck className="w-4 h-4 text-[#0E4331]" />
                 <span>{isBn ? 'পছন্দনীয় যোগাযোগের মাধ্যম' : 'Preferred Arrangement'}</span>
               </div>
 
@@ -50,7 +49,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
             <div className="p-4 rounded-xl bg-gradient-to-r from-[#DCF2E6] via-[#EEF8F3] to-white border border-[#0E4331]/25 text-[#122820] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
               <div>
                 <div className="text-[11px] font-bold text-[#0E4331] uppercase tracking-wider mb-0.5 flex items-center gap-1.5">
-                  <UserCheck className="w-3.5 h-3.5 text-[#C89B3C]" />
+                  <UserCheck className="w-3.5 h-3.5 text-[#0E4331]" />
                   <span>{isBn ? 'পিতা: মোঃ সুলতান আহমেদ' : 'Father: Md. Sultan Ahmed'}</span>
                 </div>
                 <div className="text-base sm:text-lg font-bold text-[#0E4331] tabular-nums">
@@ -65,20 +64,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
 
               <a
                 href={`tel:${cleanPhone}`}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#0E4331] text-white border border-[#C89B3C]/50 text-xs font-bold hover:bg-[#165B43] transition-all whitespace-nowrap shadow-xs no-print"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#D5EFE2] to-white border border-[#0E4331]/30 text-[#0E4331] text-xs font-bold hover:border-[#0E4331] hover:from-[#C7EBD8] hover:to-white transition-all whitespace-nowrap shadow-xs no-print"
               >
-                <Phone className="w-3.5 h-3.5 text-[#C89B3C]" />
+                <Phone className="w-3.5 h-3.5" />
                 <span>{isBn ? 'অভিভাবককে কল করুন' : 'Call Guardian'}</span>
               </a>
             </div>
           </div>
 
           {/* Public Email Option */}
-          <div className="p-6 sm:p-7 rounded-2xl bg-white border-2 border-[#0E4331]/20 ring-1 ring-[#C89B3C]/40 shadow-sm flex flex-col justify-between relative overflow-hidden stacked-card">
-            <ManuscriptCorner position="top-right" size={24} />
+          <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-3">
-                <Mail className="w-4 h-4 text-[#C89B3C]" />
+                <Mail className="w-4 h-4 text-[#0E4331]" />
                 <span>{isBn ? 'ইমেইল যোগাযোগ' : 'Formal Email Communication'}</span>
               </div>
 
@@ -95,7 +93,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
 
             <div>
               {/* Mailto link rendered exactly as supplied */}
-              <div className="p-4 rounded-xl bg-gradient-to-r from-[#DCF2E6]/50 via-[#EEF8F3]/70 to-white border border-[#0E4331]/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+              <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
                 <div className="overflow-hidden">
                   <div className="text-[11px] font-bold text-[#0E4331] uppercase tracking-wider mb-0.5">
                     {isBn ? 'পাবলিক ইমেইল' : 'Public Email'}
@@ -110,16 +108,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
 
                 <a
                   href={`mailto:${profile.publicEmail}`}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#D5EFE2] to-white border border-[#C89B3C]/50 text-[#0E4331] text-xs font-bold hover:border-[#0E4331] transition-all whitespace-nowrap shadow-xs no-print"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#D5EFE2] to-white border border-[#0E4331]/30 text-[#0E4331] text-xs font-bold hover:border-[#0E4331] hover:from-[#C7EBD8] hover:to-white transition-all whitespace-nowrap shadow-xs no-print"
                 >
-                  <Mail className="w-3.5 h-3.5 text-[#C89B3C]" />
+                  <Mail className="w-3.5 h-3.5" />
                   <span>{isBn ? 'ইমেইল পাঠান' : 'Send Email'}</span>
                 </a>
               </div>
 
               {/* Courteous communication note */}
               <div className="flex items-start gap-2 p-2.5 rounded-lg bg-[#FAFBF9] border border-[#0E4331]/15 text-[11px] text-[#42584E] no-print">
-                <AlertCircle className="w-3.5 h-3.5 text-[#C89B3C] shrink-0 mt-0.5" />
+                <AlertCircle className="w-3.5 h-3.5 text-[#0E4331] shrink-0 mt-0.5" />
                 <span>
                   {isBn
                     ? 'অনুরোধ: যোগাযোগের ক্ষেত্রে শালীনতা রক্ষা ও প্রস্তাবের সাথে সংক্ষিপ্ত পারিবারিক পরিচিতি উল্লেখ করার অনুরোধ রইল।'

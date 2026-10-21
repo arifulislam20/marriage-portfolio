@@ -1,7 +1,6 @@
 import React from 'react';
 import { Language, ProfileData } from '../types';
 import { Shield, ArrowUp } from 'lucide-react';
-import { ManuscriptCorner, ManuscriptRosette } from './ManuscriptDecorations';
 
 interface PrivacyFooterProps {
   profile: ProfileData;
@@ -16,20 +15,13 @@ export const PrivacyFooter: React.FC<PrivacyFooterProps> = ({ profile, lang }) =
   };
 
   return (
-    <footer className="pt-12 pb-16 border-t-2 border-[#0E4331]/20 bg-[#F8FAF8] text-xs text-[#42584E]">
+    <footer className="pt-12 pb-16 border-t border-[#0E4331]/15 bg-[#F6FAF7] text-xs text-[#42584E]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Royal Colophon Notice Box */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-white border-2 border-[#0E4331]/20 ring-1 ring-[#C89B3C]/40 shadow-sm mb-10 relative overflow-hidden">
-          <ManuscriptCorner position="top-left" size={28} />
-          <ManuscriptCorner position="top-right" size={28} />
-          <ManuscriptCorner position="bottom-left" size={28} />
-          <ManuscriptCorner position="bottom-right" size={28} />
-
-          <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-5 text-center">
-            <ManuscriptRosette size={16} />
-            <Shield className="w-4 h-4 text-[#C89B3C]" />
-            <span>{isBn ? 'শাহী সমাপনী — বায়োডাটার আমানত ও পারিবারিক শিষ্টাচার' : 'Colophon & Matrimonial Covenant of Trust'}</span>
-            <ManuscriptRosette size={16} />
+        {/* Matrimonial Privacy & Etiquette Notice Box */}
+        <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs mb-10">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-3">
+            <Shield className="w-4 h-4 text-[#0E4331]" />
+            <span>{isBn ? 'বায়োডাটার আমানত ও পারিবারিক শিষ্টাচার' : 'Family Privacy & Matrimonial Etiquette'}</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs leading-relaxed text-[#42584E]">
@@ -75,17 +67,14 @@ export const PrivacyFooter: React.FC<PrivacyFooterProps> = ({ profile, lang }) =
 
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#0E4331]/15">
-          <div className="text-center sm:text-left flex items-center gap-3">
-            <ManuscriptRosette size={20} />
-            <div>
-              <div className={`text-sm font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
-                {isBn ? profile.fullNameBn : profile.fullNameEn}
-              </div>
-              <div className="text-[11px] text-[#42584E] mt-0.5">
-                {isBn
-                  ? 'দ্বীনি নীতি ও পারস্পরিক শ্রদ্ধাবোধে সাজানো ইসলামিক জীবনবৃত্তান্ত'
-                  : 'Islamic Matrimonial Portfolio · Dedicated to Faith & Honor'}
-              </div>
+          <div className="text-center sm:text-left">
+            <div className={`text-sm font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
+              {isBn ? profile.fullNameBn : profile.fullNameEn}
+            </div>
+            <div className="text-[11px] text-[#42584E] mt-0.5">
+              {isBn
+                ? 'দ্বীনি নীতি ও পারস্পরিক শ্রদ্ধাবোধে সাজানো ইসলামিক জীবনবৃত্তান্ত'
+                : 'Islamic Matrimonial Portfolio · Dedicated to Faith & Honor'}
             </div>
           </div>
 
@@ -93,7 +82,7 @@ export const PrivacyFooter: React.FC<PrivacyFooterProps> = ({ profile, lang }) =
             <button
               type="button"
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white text-xs font-semibold text-[#0E4331] border border-[#C89B3C]/50 hover:border-[#0E4331] transition-colors shadow-2xs"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white text-xs font-semibold text-[#0E4331] border border-[#0E4331]/20 hover:border-[#0E4331] transition-colors shadow-2xs"
               aria-label="Back to top of page"
             >
               <span>{isBn ? 'উপরে ফিরুন' : 'Back to Top'}</span>
