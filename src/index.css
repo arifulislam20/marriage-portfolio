@@ -265,19 +265,18 @@
 }
 
 /* ==========================================================================
-   Stacked Cards Scroll-Emergence Animation (স্তরে স্তরে সাজানো কার্ড স্ক্রোল এনিমেশন)
+   Stacked Cards Scroll-Emergence & Folding Animation (সব কার্ড ও ভেতরের কার্ড)
    ========================================================================== */
 .stacked-card {
-  opacity: 0.25;
-  transform: translateY(38px) scale(0.965);
+  opacity: 0.2;
+  transform: translateY(32px) scale(0.975);
   transform-origin: center top;
-  box-shadow: 0 -4px 18px -4px rgba(14, 67, 49, 0.08), 0 10px 25px -5px rgba(14, 67, 49, 0.06);
+  box-shadow: 0 -4px 16px -2px rgba(14, 67, 49, 0.08), 0 8px 20px -4px rgba(14, 67, 49, 0.05);
   transition: 
-    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.25s ease;
-  will-change: transform, opacity, box-shadow;
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
 .stacked-card.is-revealed {
@@ -286,42 +285,51 @@
   box-shadow: 0 4px 20px -2px rgba(14, 67, 49, 0.06);
 }
 
+/* Inner cards inside outer cards (কার্ড এর ভিতরের কার্ড গুলো) */
+.stacked-inner-card {
+  opacity: 0.2;
+  transform: translateY(20px) scale(0.98);
+  transform-origin: center top;
+  transition: 
+    opacity 0.48s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.48s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.48s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.stacked-inner-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 /* Staggered card emergence within multi-card grids (একটার পর একটা বের হওয়ার স্মুথ বিলম্ব) */
-.stack-stagger-1 { transition-delay: 50ms; }
-.stack-stagger-2 { transition-delay: 110ms; }
-.stack-stagger-3 { transition-delay: 170ms; }
-.stack-stagger-4 { transition-delay: 230ms; }
-.stack-stagger-5 { transition-delay: 290ms; }
-.stack-stagger-6 { transition-delay: 350ms; }
+.stack-stagger-1 { transition-delay: 40ms; }
+.stack-stagger-2 { transition-delay: 90ms; }
+.stack-stagger-3 { transition-delay: 140ms; }
+.stack-stagger-4 { transition-delay: 190ms; }
+.stack-stagger-5 { transition-delay: 240ms; }
+.stack-stagger-6 { transition-delay: 290ms; }
 
-/* Staggered card emergence within multi-card grids (একটার পর একটা স্তরে স্তরে বের হওয়ার চমৎকার এফেক্ট) */
-.grid > .manuscript-registry-item:nth-child(1),
-.grid > .theme-card:nth-child(1),
+/* Staggered card emergence for inner cards */
+.inner-stagger-1 { transition-delay: 50ms; }
+.inner-stagger-2 { transition-delay: 110ms; }
+.inner-stagger-3 { transition-delay: 170ms; }
+.inner-stagger-4 { transition-delay: 230ms; }
+.inner-stagger-5 { transition-delay: 290ms; }
+.inner-stagger-6 { transition-delay: 350ms; }
+
+/* Staggered card emergence within multi-card grids (স্বয়ংক্রিয় গ্রিড বিলম্ব) */
 .grid > .stacked-card:nth-child(1) { transition-delay: 40ms; }
-
-.grid > .manuscript-registry-item:nth-child(2),
-.grid > .theme-card:nth-child(2),
-.grid > .stacked-card:nth-child(2) { transition-delay: 110ms; }
-
-.grid > .manuscript-registry-item:nth-child(3),
-.grid > .theme-card:nth-child(3),
-.grid > .stacked-card:nth-child(3) { transition-delay: 180ms; }
-
-.grid > .manuscript-registry-item:nth-child(4),
-.grid > .theme-card:nth-child(4),
-.grid > .stacked-card:nth-child(4) { transition-delay: 250ms; }
-
-.grid > .manuscript-registry-item:nth-child(5),
-.grid > .theme-card:nth-child(5),
-.grid > .stacked-card:nth-child(5) { transition-delay: 320ms; }
-
-.grid > .manuscript-registry-item:nth-child(6),
-.grid > .theme-card:nth-child(6),
-.grid > .stacked-card:nth-child(6) { transition-delay: 390ms; }
+.grid > .stacked-card:nth-child(2) { transition-delay: 90ms; }
+.grid > .stacked-card:nth-child(3) { transition-delay: 140ms; }
+.grid > .stacked-card:nth-child(4) { transition-delay: 190ms; }
+.grid > .stacked-card:nth-child(5) { transition-delay: 240ms; }
+.grid > .stacked-card:nth-child(6) { transition-delay: 290ms; }
 
 /* Print safety: disable transforms and force full opacity during printing */
 @media print {
-  .stacked-card {
+  .stacked-card,
+  .stacked-inner-card {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
