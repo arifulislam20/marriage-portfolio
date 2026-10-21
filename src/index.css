@@ -63,30 +63,107 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%230E4331' stroke-width='0.8' stroke-opacity='0.09'%3E%3Ccircle cx='32' cy='32' r='16' stroke-width='0.7'/%3E%3Ccircle cx='32' cy='32' r='8' stroke='%23B38E3F' stroke-opacity='0.22'/%3E%3Cpath d='M32 8v48M8 32h48M15 15l34 34M15 49l34-34'/%3E%3Ccircle cx='0' cy='0' r='16' stroke-width='0.7'/%3E%3Ccircle cx='64' cy='0' r='16' stroke-width='0.7'/%3E%3Ccircle cx='0' cy='64' r='16' stroke-width='0.7'/%3E%3Ccircle cx='64' cy='64' r='16' stroke-width='0.7'/%3E%3Cpath d='M32 16L48 32 32 48 16 32z' stroke='%23B38E3F' stroke-opacity='0.18'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+/* Royal Nikah Manuscript Folio Styling */
+.manuscript-folio {
+  background-color: #FFFFFF;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(200, 155, 60, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 100%, rgba(14, 67, 49, 0.05) 0%, transparent 50%);
+  border: 2px solid rgba(14, 67, 49, 0.28);
+  box-shadow: 
+    0 0 0 1px rgba(200, 155, 60, 0.4),
+    0 10px 40px -10px rgba(14, 67, 49, 0.12),
+    0 25px 60px -15px rgba(200, 155, 60, 0.15);
+}
+
+.manuscript-ribbon {
+  background: linear-gradient(135deg, rgba(14, 67, 49, 0.08) 0%, rgba(200, 155, 60, 0.15) 50%, rgba(14, 67, 49, 0.08) 100%);
+  border: 1px solid rgba(200, 155, 60, 0.5);
+}
+
+.manuscript-registry-item {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(14, 67, 49, 0.18);
+  box-shadow: 
+    0 0 0 1px rgba(200, 155, 60, 0.25) inset,
+    0 -3px 14px -3px rgba(14, 67, 49, 0.08),
+    0 2px 8px -2px rgba(14, 67, 49, 0.06);
+  opacity: 0.25;
+  transform: translateY(32px) scale(0.97);
+  transform-origin: center top;
+  transition: 
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease;
+  will-change: transform, opacity, box-shadow;
+}
+
+.manuscript-registry-item.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(200, 155, 60, 0.25) inset,
+    0 2px 8px -2px rgba(14, 67, 49, 0.06);
+}
+
+.manuscript-registry-item.is-revealed:hover {
+  transform: translateY(-3px) scale(1.005);
+  border-color: rgba(200, 155, 60, 0.55);
+  box-shadow: 
+    0 0 0 1.5px rgba(200, 155, 60, 0.5) inset,
+    0 10px 24px -4px rgba(14, 67, 49, 0.12);
+}
+
 /* Standardized White & Emerald Luxury Cards */
 .theme-card {
   background-color: #FFFFFF;
-  border: 1px solid rgba(14, 67, 49, 0.16);
+  border: 1px solid rgba(14, 67, 49, 0.18);
+  box-shadow: 
+    0 0 0 1px rgba(200, 155, 60, 0.25) inset,
+    0 -4px 16px -3px rgba(14, 67, 49, 0.08),
+    0 4px 20px -2px rgba(14, 67, 49, 0.06);
   color: var(--text-primary);
-  box-shadow: 0 4px 20px -2px rgba(14, 67, 49, 0.05);
-  transition: all 0.2s ease-in-out;
+  opacity: 0.25;
+  transform: translateY(32px) scale(0.97);
+  transform-origin: center top;
+  transition: 
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease;
+  will-change: transform, opacity, box-shadow;
 }
 
-.theme-card:hover {
+.theme-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(200, 155, 60, 0.25) inset,
+    0 4px 20px -2px rgba(14, 67, 49, 0.06);
+}
+
+.theme-card.is-revealed:hover {
+  transform: translateY(-4px) scale(1.005);
   border-color: rgba(14, 67, 49, 0.35);
-  box-shadow: 0 8px 24px -4px rgba(14, 67, 49, 0.08);
+  box-shadow: 
+    0 0 0 1.5px rgba(200, 155, 60, 0.45) inset,
+    0 14px 32px -4px rgba(14, 67, 49, 0.14);
 }
 
 .theme-card-emerald {
   background: linear-gradient(145deg, #0E4331 0%, #092C20 100%);
-  border: 1px solid rgba(179, 142, 63, 0.35);
+  border: 1px solid rgba(200, 155, 60, 0.5);
+  box-shadow: 
+    0 0 0 1px rgba(245, 224, 142, 0.3) inset,
+    0 8px 28px -4px rgba(14, 67, 49, 0.3);
   color: #FFFFFF;
-  box-shadow: 0 8px 28px -4px rgba(14, 67, 49, 0.25);
 }
 
 .theme-subcard {
-  background-color: #F3F8F5;
-  border: 1px solid rgba(14, 67, 49, 0.14);
+  background-color: #F8FAF8;
+  border: 1px solid rgba(14, 67, 49, 0.16);
+  box-shadow: 0 0 0 1px rgba(200, 155, 60, 0.2) inset;
 }
 
 .theme-text-primary {
@@ -102,7 +179,7 @@
 }
 
 .theme-text-gold {
-  color: #B38E3F;
+  color: #C89B3C;
 }
 
 /* Print Stylesheet */
@@ -185,4 +262,69 @@
 
 .animate-slide-prev {
   animation: slideInFromLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================================================
+   Stacked Cards Scroll-Emergence Animation (স্তরে স্তরে সাজানো কার্ড স্ক্রোল এনিমেশন)
+   ========================================================================== */
+.stacked-card {
+  opacity: 0.25;
+  transform: translateY(38px) scale(0.965);
+  transform-origin: center top;
+  box-shadow: 0 -4px 18px -4px rgba(14, 67, 49, 0.08), 0 10px 25px -5px rgba(14, 67, 49, 0.06);
+  transition: 
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease;
+  will-change: transform, opacity, box-shadow;
+}
+
+.stacked-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 0 4px 20px -2px rgba(14, 67, 49, 0.06);
+}
+
+/* Staggered card emergence within multi-card grids (একটার পর একটা বের হওয়ার স্মুথ বিলম্ব) */
+.stack-stagger-1 { transition-delay: 50ms; }
+.stack-stagger-2 { transition-delay: 110ms; }
+.stack-stagger-3 { transition-delay: 170ms; }
+.stack-stagger-4 { transition-delay: 230ms; }
+.stack-stagger-5 { transition-delay: 290ms; }
+.stack-stagger-6 { transition-delay: 350ms; }
+
+/* Staggered card emergence within multi-card grids (একটার পর একটা স্তরে স্তরে বের হওয়ার চমৎকার এফেক্ট) */
+.grid > .manuscript-registry-item:nth-child(1),
+.grid > .theme-card:nth-child(1),
+.grid > .stacked-card:nth-child(1) { transition-delay: 40ms; }
+
+.grid > .manuscript-registry-item:nth-child(2),
+.grid > .theme-card:nth-child(2),
+.grid > .stacked-card:nth-child(2) { transition-delay: 110ms; }
+
+.grid > .manuscript-registry-item:nth-child(3),
+.grid > .theme-card:nth-child(3),
+.grid > .stacked-card:nth-child(3) { transition-delay: 180ms; }
+
+.grid > .manuscript-registry-item:nth-child(4),
+.grid > .theme-card:nth-child(4),
+.grid > .stacked-card:nth-child(4) { transition-delay: 250ms; }
+
+.grid > .manuscript-registry-item:nth-child(5),
+.grid > .theme-card:nth-child(5),
+.grid > .stacked-card:nth-child(5) { transition-delay: 320ms; }
+
+.grid > .manuscript-registry-item:nth-child(6),
+.grid > .theme-card:nth-child(6),
+.grid > .stacked-card:nth-child(6) { transition-delay: 390ms; }
+
+/* Print safety: disable transforms and force full opacity during printing */
+@media print {
+  .stacked-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
 }

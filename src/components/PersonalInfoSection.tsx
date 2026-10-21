@@ -1,6 +1,7 @@
 import React from 'react';
 import { Language, ProfileData } from '../types';
 import { User, Calendar, Ruler, HeartHandshake, MapPin, Home } from 'lucide-react';
+import { ManuscriptChapterHeader, ManuscriptCorner } from './ManuscriptDecorations';
 
 interface PersonalInfoSectionProps {
   profile: ProfileData;
@@ -11,24 +12,23 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
   const isBn = lang === 'bn';
 
   return (
-    <section id="details" className="py-12 border-t border-[#0E4331]/15 bg-[#FBFDFB]">
+    <section id="details" className="py-12 border-t border-[#0E4331]/15 bg-[#FCFDFB]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="mb-8">
-          <div className={`text-xs uppercase tracking-widest text-[#0E4331] ${isBn ? 'font-bengali' : 'font-cinzel'} mb-1 font-bold`}>
-            {isBn ? 'ব্যক্তিগত তথ্য' : 'Personal Details'}
-          </div>
-          <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
-            {isBn ? 'মৌলিক পরিচিতি ও ঠিকানা বিবরণী' : 'Basic Identity & Addresses'}
-          </h2>
-        </div>
+        {/* Manuscript Chapter Header */}
+        <ManuscriptChapterHeader
+          chapterNumber={isBn ? 'পরিচ্ছেদ ০১' : 'CHAPTER I'}
+          title={isBn ? 'মৌলিক পরিচিতি ও সনদপত্র বিবরণী' : 'Basic Identity & Official Registry'}
+          subtitle={isBn ? 'নাম, জন্মতারিখ, শারীরিক গঠন ও স্থায়ী/বর্তমান আবাসনের প্রামাণ্য নথি' : 'Verified credentials of personal identity, stature, and ancestral domicile'}
+          arabicPhrase="بَيَانُ الهُوِيَّةِ وَالْمَنْشَأِ"
+          lang={lang}
+        />
 
         {/* Top Info Grid: 6 Essential Attributes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {/* 1. Full Name */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="manuscript-registry-item p-5 rounded-xl relative overflow-hidden">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
-              <User className="w-3.5 h-3.5" />
+              <User className="w-3.5 h-3.5 text-[#C89B3C]" />
               <span>{isBn ? 'পূর্ণ নাম' : 'Full Name'}</span>
             </div>
             <div className="text-base font-bold text-[#122820] font-bengali">
@@ -40,9 +40,9 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           </div>
 
           {/* 2. Date of Birth */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="manuscript-registry-item p-5 rounded-xl relative overflow-hidden">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
-              <Calendar className="w-3.5 h-3.5" />
+              <Calendar className="w-3.5 h-3.5 text-[#C89B3C]" />
               <span>{isBn ? 'জন্ম তারিখ ও বয়স' : 'Date of Birth & Age'}</span>
             </div>
             <div className="text-base font-bold text-[#122820] tabular-nums">
@@ -54,9 +54,9 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           </div>
 
           {/* 3. Height */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="manuscript-registry-item p-5 rounded-xl relative overflow-hidden">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
-              <Ruler className="w-3.5 h-3.5" />
+              <Ruler className="w-3.5 h-3.5 text-[#C89B3C]" />
               <span>{isBn ? 'উচ্চতা' : 'Height'}</span>
             </div>
             <div className="text-base font-bold text-[#122820]">
@@ -68,9 +68,9 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           </div>
 
           {/* 4. Complexion & Physical Status */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="manuscript-registry-item p-5 rounded-xl relative overflow-hidden">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
-              <User className="w-3.5 h-3.5" />
+              <User className="w-3.5 h-3.5 text-[#C89B3C]" />
               <span>{isBn ? 'গায়ের রঙ ও শারীরিক অবস্থা' : 'Complexion & Physical Status'}</span>
             </div>
             <div className="text-base font-bold text-[#122820]">
@@ -82,9 +82,9 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           </div>
 
           {/* 5. Marital Status */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="manuscript-registry-item p-5 rounded-xl relative overflow-hidden">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
-              <HeartHandshake className="w-3.5 h-3.5" />
+              <HeartHandshake className="w-3.5 h-3.5 text-[#C89B3C]" />
               <span>{isBn ? 'বৈবাহিক অবস্থা' : 'Marital Status'}</span>
             </div>
             <div className="text-base font-bold text-[#122820]">
@@ -96,9 +96,9 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           </div>
 
           {/* 6. Ideology & Religion */}
-          <div className="p-5 rounded-xl bg-white border border-[#0E4331]/20 shadow-xs hover:border-[#0E4331]/40 transition-colors">
+          <div className="manuscript-registry-item p-5 rounded-xl relative overflow-hidden">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0E4331] mb-2 uppercase tracking-wide">
-              <HeartHandshake className="w-3.5 h-3.5" />
+              <HeartHandshake className="w-3.5 h-3.5 text-[#C89B3C]" />
               <span>{isBn ? 'ধর্মীয় আদর্শ ও মাযহাব' : 'Religious Ideology'}</span>
             </div>
             <div className="text-base font-bold text-[#122820]">
@@ -113,24 +113,26 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
         {/* Addresses Section: STRICTLY SEPARATE FIELDS AS REQUIRED */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Current Address */}
-          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/25 shadow-sm relative">
+          <div className="p-6 sm:p-7 rounded-2xl bg-white border-2 border-[#0E4331]/20 ring-1 ring-[#C89B3C]/40 shadow-sm relative overflow-hidden stacked-card">
+            <ManuscriptCorner position="top-right" size={24} />
             <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-3">
-              <MapPin className="w-4 h-4 text-[#0E4331]" />
-              <span>{isBn ? 'বর্তমান ঠিকানা' : 'Current Address'}</span>
+              <MapPin className="w-4 h-4 text-[#C89B3C]" />
+              <span>{isBn ? 'বর্তমান ঠিকানা ও কর্মস্থল' : 'Current Address'}</span>
             </div>
             <p className={`text-sm sm:text-base text-[#122820] font-medium leading-relaxed ${isBn ? 'font-bengali' : 'font-english'}`}>
               {isBn ? profile.currentAddressBn : profile.currentAddressEn}
             </p>
             <div className="mt-4 pt-3 border-t border-[#0E4331]/15 text-xs text-[#42584E]">
-              {isBn ? 'কর্মস্থল ও বসবাসের স্থান' : 'Residential & Workplace Base'}
+              {isBn ? 'কর্মস্থল ও দৈনন্দিন বসবাসের স্থান' : 'Residential & Workplace Base'}
             </div>
           </div>
 
           {/* Permanent Address */}
-          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/25 shadow-sm relative">
+          <div className="p-6 sm:p-7 rounded-2xl bg-white border-2 border-[#0E4331]/20 ring-1 ring-[#C89B3C]/40 shadow-sm relative overflow-hidden stacked-card">
+            <ManuscriptCorner position="top-right" size={24} />
             <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-3">
-              <Home className="w-4 h-4 text-[#0E4331]" />
-              <span>{isBn ? 'স্থায়ী ঠিকানা' : 'Permanent Address'}</span>
+              <Home className="w-4 h-4 text-[#C89B3C]" />
+              <span>{isBn ? 'স্থায়ী পৈতৃক ঠিকানা' : 'Permanent Ancestral Address'}</span>
             </div>
             <p className={`text-sm sm:text-base text-[#122820] font-medium leading-relaxed ${isBn ? 'font-bengali' : 'font-english'}`}>
               {isBn ? profile.permanentAddressBn : profile.permanentAddressEn}

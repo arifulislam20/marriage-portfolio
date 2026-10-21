@@ -13,8 +13,12 @@ import { PhotoGallerySection } from './components/PhotoGallerySection';
 import { ContactSection } from './components/ContactSection';
 import { PrivacyFooter } from './components/PrivacyFooter';
 import defaultPermanentPhotos from './data/permanentPhotos.json';
+import { useStackedScrollReveal } from './hooks/useStackedScrollReveal';
 
 export default function App() {
+  // Activate stacked cards scroll emergence animation
+  useStackedScrollReveal();
+
   // Bengali is the default language as requested
   const [lang, setLang] = useState<Language>('bn');
 

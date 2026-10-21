@@ -1,6 +1,7 @@
 import React from 'react';
 import { Language, ProfileData } from '../types';
 import { Users, Phone, Briefcase, UserCheck, Heart } from 'lucide-react';
+import { ManuscriptChapterHeader, ManuscriptCorner } from './ManuscriptDecorations';
 
 interface FamilySectionProps {
   profile: ProfileData;
@@ -14,28 +15,28 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
   return (
     <section id="family" className="py-12 border-t border-[#0E4331]/15 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="mb-8">
-          <div className={`text-xs uppercase tracking-widest text-[#0E4331] ${isBn ? 'font-bengali' : 'font-cinzel'} mb-1 font-bold`}>
-            {isBn ? 'পারিবারিক পরিচয়' : 'Family Background'}
-          </div>
-          <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
-            {isBn ? 'পিতামাতা ও পারিবারিক তথ্যাবলি' : 'Parents & Family Information'}
-          </h2>
-        </div>
+        {/* Manuscript Chapter Header */}
+        <ManuscriptChapterHeader
+          chapterNumber={isBn ? 'পরিচ্ছেদ ০৪' : 'CHAPTER IV'}
+          title={isBn ? 'বংশমর্যাদা ও পারিবারিক পরিচয়' : 'Parents & Family Lineage'}
+          subtitle={isBn ? 'সম্মানিত পিতামাতা, ভাইবোন ও পারিবারিক দ্বীনি পরিবেশের বিশদ রূপরেখা' : 'Noble ancestry, esteemed guardians, siblings, and Islamic household upbringing'}
+          arabicPhrase="النَّسَبُ وَالْبَيْئَةُ الْعَائِلِيَّةُ"
+          lang={lang}
+        />
 
         {/* Father's Info Box - STRICTLY 3 SEPARATE FIELDS WITH DISTINCT LABELS */}
-        <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs mb-6">
+        <div className="p-6 sm:p-7 rounded-2xl bg-white border-2 border-[#0E4331]/20 ring-1 ring-[#C89B3C]/40 shadow-sm mb-6 relative overflow-hidden stacked-card">
+          <ManuscriptCorner position="top-right" size={24} />
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-5">
-            <Users className="w-4 h-4 text-[#0E4331]" />
+            <Users className="w-4 h-4 text-[#C89B3C]" />
             <span>{isBn ? 'পিতার তথ্যাবলি (অভিভাবক)' : "Father's Details (Primary Guardian)"}</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Field 1: Father's Name */}
-            <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15">
+            <div className="manuscript-registry-item p-4 rounded-xl">
               <div className="text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-1.5 flex items-center gap-1.5">
-                <UserCheck className="w-3.5 h-3.5" />
+                <UserCheck className="w-3.5 h-3.5 text-[#C89B3C]" />
                 <span>{isBn ? 'পিতার নাম' : "Father's Name"}</span>
               </div>
               <div className="text-base font-bold text-[#122820] font-bengali">
@@ -47,9 +48,9 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
             </div>
 
             {/* Field 2: Father's Occupation */}
-            <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15">
+            <div className="manuscript-registry-item p-4 rounded-xl">
               <div className="text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-1.5 flex items-center gap-1.5">
-                <Briefcase className="w-3.5 h-3.5" />
+                <Briefcase className="w-3.5 h-3.5 text-[#C89B3C]" />
                 <span>{isBn ? 'পিতার পেশা ও দ্বীনি পরিচিতি' : "Father's Occupation & Faith"}</span>
               </div>
               <div className={`text-base font-bold text-[#122820] ${isBn ? 'font-bengali' : 'font-english'}`}>
@@ -63,9 +64,9 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
             </div>
 
             {/* Field 3: Father's Phone Number (Clickable tel: link) */}
-            <div className="p-4 rounded-xl bg-[#F0F7F4] border border-[#0E4331]/15">
+            <div className="manuscript-registry-item p-4 rounded-xl">
               <div className="text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-1.5 flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5" />
+                <Phone className="w-3.5 h-3.5 text-[#C89B3C]" />
                 <span>{isBn ? 'পিতার মোবাইল নম্বর' : "Father's Contact Number"}</span>
               </div>
               <div className="text-base font-bold text-[#0E4331] tabular-nums">
@@ -87,9 +88,10 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
         {/* Mother, Siblings and Family Environment Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Mother's Info */}
-          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs">
+          <div className="p-6 rounded-2xl bg-white border-2 border-[#0E4331]/20 ring-1 ring-[#C89B3C]/40 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#0E4331]/30 hover:ring-[#C89B3C]/60 transition-all duration-300 relative overflow-hidden stacked-card">
+            <ManuscriptCorner position="top-right" size={22} />
             <div className="text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-2 flex items-center gap-1.5">
-              <Heart className="w-3.5 h-3.5 text-[#0E4331]" />
+              <Heart className="w-3.5 h-3.5 text-[#C89B3C]" />
               <span>{isBn ? 'মাতার তথ্যাবলি' : "Mother's Details"}</span>
             </div>
             <div className="text-lg font-bold text-[#122820] mb-1 font-bengali">
@@ -104,9 +106,10 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
           </div>
 
           {/* Siblings Info */}
-          <div className="p-6 rounded-2xl bg-white border border-[#0E4331]/20 shadow-xs">
+          <div className="p-6 rounded-2xl bg-white border-2 border-[#0E4331]/20 ring-1 ring-[#C89B3C]/40 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#0E4331]/30 hover:ring-[#C89B3C]/60 transition-all duration-300 relative overflow-hidden stacked-card">
+            <ManuscriptCorner position="top-right" size={22} />
             <div className="text-xs font-bold uppercase tracking-wider text-[#0E4331] mb-2 flex items-center gap-1.5">
-              <Users className="w-3.5 h-3.5 text-[#0E4331]" />
+              <Users className="w-3.5 h-3.5 text-[#C89B3C]" />
               <span>{isBn ? 'ভাই-বোন ও পরিবারে অবস্থান' : 'Siblings & Position'}</span>
             </div>
             <div className={`text-lg font-bold text-[#122820] mb-1 ${isBn ? 'font-bengali' : 'font-english'}`}>
