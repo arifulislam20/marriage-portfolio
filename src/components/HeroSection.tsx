@@ -30,12 +30,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ profile, lang }) => {
             {isBn ? profile.fullNameBn : profile.fullNameEn}
           </h1>
 
-          <div className="flex items-center gap-3 text-xs sm:text-sm text-[#42584E] font-medium tracking-wide">
-            <span className="font-semibold text-[#0E4331]">{isBn ? 'ইসলামিক জীবনবৃত্তান্ত' : 'Islamic Marriage Portfolio'}</span>
-            <span aria-hidden="true" className="text-[#0E4331]">·</span>
-            <span>{isBn ? 'অবিবাহিত' : 'Never Married'}</span>
-            <span aria-hidden="true" className="text-[#0E4331]">·</span>
-            <span>{isBn ? 'উচ্চতা: ৬ ফুট' : 'Height: 6 Feet'}</span>
+          <div className="flex items-center justify-center text-xs sm:text-sm text-[#0E4331] font-semibold tracking-wide">
+            <span>{isBn ? 'জীবন বৃত্তান্ত' : 'Biodata'}</span>
           </div>
         </div>
 
