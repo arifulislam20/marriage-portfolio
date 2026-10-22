@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Language, GalleryImage } from './types';
 import { PROFILE_DATA } from './data/profileData';
-import { Navbar } from './components/Navbar';
+import { Globe, Printer } from 'lucide-react';
 import { HeroSection } from './components/HeroSection';
 import { PersonalInfoSection } from './components/PersonalInfoSection';
 import { EducationSection } from './components/EducationSection';
@@ -161,12 +161,30 @@ export default function App() {
 
   return (
     <div className={`min-h-screen bg-white text-[#122820] flex flex-col ${lang === 'bn' ? 'font-bengali' : 'font-english'} transition-colors duration-200 selection:bg-[#0E4331]/15 selection:text-[#0E4331]`}>
-      {/* Top Bar Navigation */}
-      <Navbar
-        lang={lang}
-        onToggleLang={toggleLanguage}
-        onPrint={handlePrint}
-      />
+      {/* Top-right Floating Action Buttons (NO HEADER): Globe & Print */}
+      <div className="fixed top-3 right-3 sm:top-4 sm:right-6 z-50 flex items-center gap-2 no-print">
+        {/* Globe Icon Button for Language Switch */}
+        <button
+          type="button"
+          onClick={toggleLanguage}
+          className="w-10 h-10 rounded-full border border-[#0E4331]/25 bg-white text-[#0E4331] hover:bg-[#F2F8F5] flex items-center justify-center shadow-md hover:shadow-lg transition-all cursor-pointer"
+          aria-label={lang === 'bn' ? 'Switch to English' : 'বাংলায় দেখুন'}
+          title={lang === 'bn' ? 'Language: English / বাংলা' : 'ভাষা: বাংলা / English'}
+        >
+          <Globe className="w-4 h-4 text-[#0E4331]" />
+        </button>
+
+        {/* Print Icon Button */}
+        <button
+          type="button"
+          onClick={handlePrint}
+          className="w-10 h-10 rounded-full border border-[#0E4331]/25 bg-white text-[#0E4331] hover:bg-[#F2F8F5] flex items-center justify-center shadow-md hover:shadow-lg transition-all cursor-pointer"
+          title={lang === 'bn' ? 'বায়োডাটা প্রিন্ট বা PDF সংরক্ষণ' : 'Print or Save as PDF'}
+          aria-label="Print or Save as PDF"
+        >
+          <Printer className="w-4 h-4 text-[#0E4331]" />
+        </button>
+      </div>
 
       {/* Main Content Sections */}
       <main className="flex-1 print-container">
