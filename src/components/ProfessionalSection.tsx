@@ -1,6 +1,7 @@
 import React from 'react';
 import { Language, ProfileData } from '../types';
 import { Building2, Calendar, CheckCircle2, Layers, BookOpen, PenTool } from 'lucide-react';
+import { TypewriterHeading } from './TypewriterHeading';
 
 interface ProfessionalSectionProps {
   profile: ProfileData;
@@ -18,9 +19,11 @@ export const ProfessionalSection: React.FC<ProfessionalSectionProps> = ({ profil
           <div className={`text-xs uppercase tracking-widest text-[#0E4331] ${isBn ? 'font-bengali' : 'font-cinzel'} mb-1 font-bold`}>
             {isBn ? 'দ্বীনি খেদমত ও দক্ষতা' : 'Deeni Service & Competencies'}
           </div>
-          <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
-            {isBn ? 'দ্বীনি খেদমত ও প্রাতিষ্ঠানিক দায়িত্ব' : 'Religious Service & Engagement'}
-          </h2>
+          <TypewriterHeading
+            as="h2"
+            text={isBn ? 'দ্বীনি খেদমত ও প্রাতিষ্ঠানিক দায়িত্ব' : 'Religious Service & Engagement'}
+            className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}
+          />
         </div>
 
         {/* 2 Focused Cards: Workplace/Roles & Skills/Interests (No Corporate SS Timeline, Clean Dignified Styling) */}

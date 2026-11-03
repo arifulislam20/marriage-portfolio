@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { GalleryImage, Language, ProfileData } from '../types';
 import { exportStandaloneHtml } from '../utils/exportHtml';
+import { TypewriterHeading } from './TypewriterHeading';
 import {
   Upload,
   Image as ImageIcon,
@@ -305,9 +306,11 @@ export const PhotoGallerySection: React.FC<PhotoGallerySectionProps> = ({
         {/* Clean, Clutter-Free Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
-            <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
-              {isBn ? 'ব্যক্তিগত আলোকচিত্র' : 'Photographs'}
-            </h2>
+            <TypewriterHeading
+              as="h2"
+              text={isBn ? 'ব্যক্তিগত আলোকচিত্র' : 'Photographs'}
+              className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}
+            />
           </div>
 
           {/* Action Bar */}

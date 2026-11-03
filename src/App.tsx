@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Language, GalleryImage } from './types';
 import { PROFILE_DATA } from './data/profileData';
-import { Globe, Printer } from 'lucide-react';
+import { Globe, Printer, Download, X } from 'lucide-react';
+import { exportStandaloneHtml } from './utils/exportHtml';
 import { HeroSection } from './components/HeroSection';
 import { PersonalInfoSection } from './components/PersonalInfoSection';
 import { EducationSection } from './components/EducationSection';
@@ -155,8 +156,37 @@ export default function App() {
     });
   };
 
+  const [showPrintModal, setShowPrintModal] = useState(false);
+
+  // Automatically reveal all cards if system print dialog is triggered via Ctrl+P / Cmd+P
+  useEffect(() => {
+    const handleBeforePrint = () => {
+      document.querySelectorAll('.stacked-card, .stacked-inner-card').forEach((el) => {
+        el.classList.add('is-revealed');
+      });
+    };
+    window.addEventListener('beforeprint', handleBeforePrint);
+    return () => window.removeEventListener('beforeprint', handleBeforePrint);
+  }, []);
+
   const handlePrint = () => {
-    window.print();
+    // 1. Force reveal all cards immediately so none are faded or displaced during print
+    document.querySelectorAll('.stacked-card, .stacked-inner-card').forEach((el) => {
+      el.classList.add('is-revealed');
+    });
+
+    try {
+      // Check if running inside sandboxed iframe (such as AI Studio preview)
+      const isIframe = window.self !== window.top;
+      if (isIframe) {
+        setShowPrintModal(true);
+        return;
+      }
+      window.print();
+    } catch (e) {
+      console.warn('Direct window.print() failed, showing print modal:', e);
+      setShowPrintModal(true);
+    }
   };
 
   return (
@@ -185,6 +215,66 @@ export default function App() {
           <Printer className="w-4 h-4 text-[#0E4331]" />
         </button>
       </div>
+
+      {/* Interactive Print & PDF Modal */}
+      {showPrintModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs no-print">
+          <div className="w-full max-w-sm rounded-2xl bg-white p-6 border-2 border-[#0E4331]/25 shadow-2xl text-center relative animate-fade-in">
+            <button
+              onClick={() => setShowPrintModal(false)}
+              className="absolute top-3 right-3 text-[#42584E] hover:text-[#0E4331] p-1.5 rounded-full hover:bg-[#F2F8F5] cursor-pointer"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="w-12 h-12 rounded-full bg-[#DCF2E6] border border-[#0E4331]/20 text-[#0E4331] flex items-center justify-center mx-auto mb-3 shadow-xs">
+              <Printer className="w-6 h-6 text-[#0E4331]" />
+            </div>
+
+            <h3 className={`text-lg font-bold text-[#0E4331] mb-1.5 ${lang === 'bn' ? 'font-bengali' : 'font-display'}`}>
+              {lang === 'bn' ? 'বায়োডাটা প্রিন্ট ও PDF সংরক্ষণ' : 'Print & Save Bio-data'}
+            </h3>
+            <p className="text-xs text-[#42584E] mb-5 leading-relaxed font-medium">
+              {lang === 'bn'
+                ? 'সরাসরি ব্রাউজার থেকে প্রিন্ট / PDF সংরক্ষণ করুন অথবা ছবিসহ সম্পূর্ণ অফলাইন ফাইলটি ডাউনলোড করুন।'
+                : 'Print directly from browser or download the complete standalone portfolio file.'}
+            </p>
+
+            <div className="space-y-2.5">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowPrintModal(false);
+                  setTimeout(() => {
+                    try {
+                      window.print();
+                    } catch {
+                      exportStandaloneHtml(PROFILE_DATA, images, lang);
+                    }
+                  }, 80);
+                }}
+                className="w-full py-2.5 px-4 rounded-xl bg-[#0E4331] hover:bg-[#165B43] active:bg-[#092B20] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer"
+              >
+                <Printer className="w-4 h-4" />
+                <span>{lang === 'bn' ? 'সরাসরি প্রিন্ট / PDF (Print Now)' : 'Print / Save as PDF'}</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  exportStandaloneHtml(PROFILE_DATA, images, lang);
+                  setShowPrintModal(false);
+                }}
+                className="w-full py-2.5 px-4 rounded-xl bg-[#F0F7F4] hover:bg-[#E0F0E8] border border-[#0E4331]/20 text-[#0E4331] text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer"
+              >
+                <Download className="w-4 h-4" />
+                <span>{lang === 'bn' ? 'অফলাইন ফাইল ডাউনলোড (Download File)' : 'Download Standalone File'}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main Content Sections */}
       <main className="flex-1 print-container">

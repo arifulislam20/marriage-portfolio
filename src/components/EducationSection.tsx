@@ -1,6 +1,7 @@
 import React from 'react';
 import { Language, ProfileData } from '../types';
 import { GraduationCap, Award, BookCheck, Shield } from 'lucide-react';
+import { TypewriterHeading } from './TypewriterHeading';
 
 interface EducationSectionProps {
   profile: ProfileData;
@@ -18,9 +19,11 @@ export const EducationSection: React.FC<EducationSectionProps> = ({ profile, lan
           <div className={`text-xs uppercase tracking-widest text-[#0E4331] ${isBn ? 'font-bengali' : 'font-cinzel'} mb-1 font-bold`}>
             {isBn ? 'ইসলামিক শিক্ষা' : 'Islamic Scholarship'}
           </div>
-          <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
-            {isBn ? 'শিক্ষাগত যোগ্যতা ও গবেষণামূলক পটভূমি' : 'Educational Qualifications'}
-          </h2>
+          <TypewriterHeading
+            as="h2"
+            text={isBn ? 'শিক্ষাগত যোগ্যতা ও গবেষণামূলক পটভূমি' : 'Educational Qualifications'}
+            className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}
+          />
         </div>
 
         {/* Structured Timeline Cards */}

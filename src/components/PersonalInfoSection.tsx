@@ -1,6 +1,7 @@
 import React from 'react';
 import { Language, ProfileData } from '../types';
 import { User, Calendar, Ruler, HeartHandshake, MapPin, Home } from 'lucide-react';
+import { TypewriterHeading } from './TypewriterHeading';
 
 interface PersonalInfoSectionProps {
   profile: ProfileData;
@@ -18,9 +19,11 @@ export const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ profil
           <div className={`text-xs uppercase tracking-widest text-[#0E4331] ${isBn ? 'font-bengali' : 'font-cinzel'} mb-1 font-bold`}>
             {isBn ? 'ব্যক্তিগত তথ্য' : 'Personal Details'}
           </div>
-          <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
-            {isBn ? 'মৌলিক পরিচিতি ও ঠিকানা বিবরণী' : 'Basic Identity & Addresses'}
-          </h2>
+          <TypewriterHeading
+            as="h2"
+            text={isBn ? 'মৌলিক পরিচিতি ও ঠিকানা বিবরণী' : 'Basic Identity & Addresses'}
+            className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}
+          />
         </div>
 
         {/* Top Info Grid: 6 Essential Attributes */}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Language, ProfileData } from '../types';
 import { Users, Phone, Briefcase, UserCheck, Heart } from 'lucide-react';
+import { TypewriterHeading } from './TypewriterHeading';
 
 interface FamilySectionProps {
   profile: ProfileData;
@@ -19,9 +20,11 @@ export const FamilySection: React.FC<FamilySectionProps> = ({ profile, lang }) =
           <div className={`text-xs uppercase tracking-widest text-[#0E4331] ${isBn ? 'font-bengali' : 'font-cinzel'} mb-1 font-bold`}>
             {isBn ? 'পারিবারিক পরিচয়' : 'Family Background'}
           </div>
-          <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
-            {isBn ? 'পিতামাতা ও পারিবারিক তথ্যাবলি' : 'Parents & Family Information'}
-          </h2>
+          <TypewriterHeading
+            as="h2"
+            text={isBn ? 'পিতামাতা ও পারিবারিক তথ্যাবলি' : 'Parents & Family Information'}
+            className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}
+          />
         </div>
 
         {/* Father's Info Box - STRICTLY 3 SEPARATE FIELDS WITH DISTINCT LABELS */}

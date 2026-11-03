@@ -1,6 +1,7 @@
 import React from 'react';
 import { Language, ProfileData } from '../types';
 import { Mail, Phone, ShieldCheck, AlertCircle, UserCheck } from 'lucide-react';
+import { TypewriterHeading } from './TypewriterHeading';
 
 interface ContactSectionProps {
   profile: ProfileData;
@@ -19,9 +20,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile, lang })
           <div className={`text-xs uppercase tracking-widest text-[#0E4331] ${isBn ? 'font-bengali' : 'font-cinzel'} mb-1 font-bold`}>
             {isBn ? 'যোগাযোগ' : 'Contact Information'}
           </div>
-          <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
-            {isBn ? 'অভিভাবকের মাধ্যমে যোগাযোগ ও আনুষ্ঠানিক মাধ্যম' : 'Guardian Contact & Inquiries'}
-          </h2>
+          <TypewriterHeading
+            as="h2"
+            text={isBn ? 'অভিভাবকের মাধ্যমে যোগাযোগ ও আনুষ্ঠানিক মাধ্যম' : 'Guardian Contact & Inquiries'}
+            className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}
+          />
         </div>
 
         {/* Contact Arrangements Card */}

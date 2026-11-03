@@ -2,6 +2,7 @@ import React from 'react';
 import { Language, ProfileData } from '../types';
 import { ArrowDown, BookOpen, Briefcase, Heart, Sparkles, UserCheck } from 'lucide-react';
 import { IslamicToron } from './IslamicToron';
+import { TypewriterHeading } from './TypewriterHeading';
 
 interface HeroSectionProps {
   profile: ProfileData;
@@ -26,9 +27,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ profile, lang }) => {
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </div>
 
-          <h1 className={`text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0E4331] mb-3 ${isBn ? 'font-bengali' : 'font-display'}`}>
-            {isBn ? profile.fullNameBn : profile.fullNameEn}
-          </h1>
+          <TypewriterHeading
+            as="h1"
+            text={isBn ? profile.fullNameBn : profile.fullNameEn}
+            className={`text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0E4331] mb-3 ${isBn ? 'font-bengali' : 'font-display'}`}
+          />
 
           <div className="flex items-center justify-center text-xs sm:text-sm text-[#0E4331] font-semibold tracking-wide">
             <span>{isBn ? 'জীবন বৃত্তান্ত' : 'Biodata'}</span>

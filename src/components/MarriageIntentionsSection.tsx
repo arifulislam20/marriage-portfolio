@@ -1,6 +1,7 @@
 import React from 'react';
 import { Language, ProfileData } from '../types';
 import { Heart, Coins, Sparkles, Check } from 'lucide-react';
+import { TypewriterHeading } from './TypewriterHeading';
 
 interface MarriageIntentionsSectionProps {
   profile: ProfileData;
@@ -21,9 +22,11 @@ export const MarriageIntentionsSection: React.FC<MarriageIntentionsSectionProps>
           <div className={`text-xs uppercase tracking-widest text-[#0E4331] ${isBn ? 'font-bengali' : 'font-cinzel'} mb-1 font-bold`}>
             {isBn ? 'বিবাহের লক্ষ্য' : 'Marriage Intentions'}
           </div>
-          <h2 className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}>
-            {isBn ? 'পাত্রীর কাঙ্ক্ষিত গুণাবলি ও ভবিষ্যৎ রূপরেখা' : 'Spouse Preferences & Future Aspiration'}
-          </h2>
+          <TypewriterHeading
+            as="h2"
+            text={isBn ? 'পাত্রীর কাঙ্ক্ষিত গুণাবলি ও ভবিষ্যৎ রূপরেখা' : 'Spouse Preferences & Future Aspiration'}
+            className={`text-2xl sm:text-3xl font-bold text-[#0E4331] ${isBn ? 'font-bengali' : 'font-display'}`}
+          />
         </div>
 
         {/* Desired Qualities in a Spouse */}
